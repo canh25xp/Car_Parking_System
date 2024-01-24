@@ -1,7 +1,8 @@
 # RC522 RFID Reader Module
-> [Datasheet](./MFRC522.PDF)
 
 ## Specification
+> [Datasheet](./MFRC522.PDF)
+
 Name|Value
 -|-
 Carrier Frequency | 13.56 MHz
@@ -28,6 +29,14 @@ MISO | Master Input Slave Output. This pin connects with the Arduino/Microcontro
 MOSI | Master Output Slave Input. MOSI is the data input pin for RFID module in SPI communication
 SCK | Clock Signal Pin.
 SDA | Data Signal Pin.
+
+## Setup
+1. Download the Library 
+```bash
+arduino-cli lib install MFRC522
+# or
+arduino-cli lib install --git-url https://github.com/miguelbalboa/rfid
+```
 
 ## References
 1. https://microcontrollerslab.com/rc522-rfid-module-arduino-tutorial/
