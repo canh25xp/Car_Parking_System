@@ -1,3 +1,4 @@
-.vscode
+.vscode/
 *.exe
-Smart_parking
+Smart_parking/
+build/
