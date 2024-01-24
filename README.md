@@ -23,5 +23,9 @@ code --install-extension vsciot-vscode.vscode-arduino
 1. [Arduino library for MFRC522](https://github.com/miguelbalboa/rfid)
 
 ## Documentations and References
-1. [arduino-cli documentations](https://arduino.github.io/arduino-cli)
+1. [Arduino-cli documentations](https://arduino.github.io/arduino-cli)
 2. [How to Use OV7670](https://circuitdigest.com/microcontroller-projects/how-to-use-ov7670-camera-module-with-arduino)
+
+## Helpful
+1. [Instructables](https://www.instructables.com/)
+2. [Alldatasheet](https://www.alldatasheet.com/)
