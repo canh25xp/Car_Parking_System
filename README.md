@@ -17,6 +17,10 @@ code --install-extension vsciot-vscode.vscode-arduino
 1. Arduino Uno R3 Atmega328P. [buy link](https://chotroihn.vn/kit-arduino-uno-r3-atmega328p-cam-k1b3-1-33g)
 2. Camera Module OV7670 CMOS VGA. [buy link](https://chotroihn.vn/camera-ov7670-no-fifo)
 3. Module RFID-RC522. [buy link](https://chotroihn.vn/module-rfid-rc522-13-56mhz) 
+4. RFID Card FM1108IC. [buy link](https://chotroihn.vn/the-rfid-trang-fm1108ic-rc522-13-56mhz-k1a5-1-18g)
+
+### Miscellaneous
+1. [Arduino library for MFRC522](https://github.com/miguelbalboa/rfid)
 
 ## Documentations and References
 1. [arduino-cli documentations](https://arduino.github.io/arduino-cli)
