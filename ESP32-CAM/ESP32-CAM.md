@@ -23,23 +23,9 @@ Operating frequency | 2412 ~ 2484 MHz
 Antenna | Onboard PCB antenna
 SPI Flash | 32Mbit
 Security | WPA/WPA2/WPA2-Enterprise/WPS
-
-- Transmitting power:
-    - 802.11b: 17 ±2dBm(@11Mbps)
-    - 802.11g: 14 ±2dBm(@54Mbps)
-    - 802.11n: 13 ±2dBm(@HT20,MCS7)
-- Reception sensitivity:
-    - CCK,1Mbps: -90 dBm
-    - CCK,11Mbps: -85 dBm
-    - 6Mbps(1/2 BPSK): -88 dBm
-    - 54Mbps(3/4 64-QAM): -70 dBm
-    - HT20,MCS7(65Mbps, 72.2Mbps): -67 dBm
-- Power consumption:
-    - Flash off: 180mA@5V
-    - Flash on and brightness max: 310mA@5V
-    - Deep-Sleep: as low as 6mA@5V
-    - Modern-Sleep: as low as 20mA@5V
-    - Light-Sleep: as low as 6.7mA@5V
+Transmitting power | 802.11b: 17 ±2dBm(@11Mbps)<br>802.11g: 14 ±2dBm(@54Mbps)<br>802.11n: 13 ±2dBm(@HT20,MCS7)
+Reception sensitivity | CCK,1Mbps: -90 dBm <br>CCK,11Mbps: -85 dBm<br>6Mbps(1/2 BPSK): -88 dBm<br>54Mbps(3/4 64-QAM): -70 dBm<br>HT20,MCS7(65Mbps, 72.2Mbps): -67 dBm
+Power consumption |  Flash off: 180mA@5V<br> Flash on and brightness max: 310mA@5V<br> Deep-Sleep: > 6mA@5V<br> Modern-Sleep: > 20mA@5V<br> Light-Sleep: > 6.7mA@5V
 
 ## Pinout Diagram
 
@@ -47,13 +33,14 @@ Security | WPA/WPA2/WPA2-Enterprise/WPS
 
 ## Driver
 
+https://github.com/espressif/esp32-camera
 
 ## Documents and References
 - https://components101.com/modules/esp32-cam-camera-module
 - Dronebotworkshop's Tutorial [Article](https://dronebotworkshop.com/esp32-cam-intro/) | [Youtube](https://www.youtube.com/watch?v=visj0KE5VtY)
 - How to setup and use ESP32 Cam with Micro USB WiFi Camera [Youtube](https://www.youtube.com/watch?v=RCtVxZnjPmY)
+- RandomNerd's Tutorial [Artical](https://randomnerdtutorials.com/esp32-cam-video-streaming-web-server-camera-home-assistant/) | [Youtube](https://www.youtube.com/watch?v=36p9To2hfak)
 - https://www.youtube.com/watch?v=hSr557hppwY
 - https://www.youtube.com/watch?v=k_PJLkfqDuI&t=473s
 - https://www.youtube.com/watch?v=Sb08leLWOgA
 - https://www.youtube.com/watch?v=MKiITEsOwRA
-- 
