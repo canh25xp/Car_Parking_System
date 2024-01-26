@@ -4,18 +4,26 @@ Quick Links:
    - [About ESP32-CAM](./ESP32-CAM/ESP32-CAM.md)
    - [About nodeMCU](./nodeMCU/nodeMCU.md)
    - [About RC522](./RC522/RC522.md)
-   - 
 
 ## Tools and Requirements
 ### Software
-1. Arduino command line tools [arduino-cli](https://github.com/arduino/arduino-cli)
-```sh
-winget install ArduinoSA.CLI
-```
-2. IDE [VScode](https://code.visualstudio.com/) and [Arduino extension](https://github.com/microsoft/vscode-arduino)
+1. [VScode](https://code.visualstudio.com/) and [Arduino extension](https://github.com/microsoft/vscode-arduino)
 ```sh
 winget install Microsoft.VisualStudioCode
 code --install-extension vsciot-vscode.vscode-arduino
+```
+2. Arduino command line tools [arduino-cli](https://github.com/arduino/arduino-cli)
+The vscode-arduino already bundled with its own arduino-cli, how ever I prefer using a machine-wise executable :
+```sh
+winget install ArduinoSA.CLI
+```
+Config arduino extension :
+```json
+// %Appdata%/Code/User/settings.json
+{
+   "arduino.useArduinoCli": true,
+   "arduino.path": "C:\\Program Files\\Arduino CLI",
+}
 ```
 3. ESP8266 NodeMCU Driver. [Download](https://www.silabs.com/documents/public/software/CP210x_Universal_Windows_Driver.zip) for windows 10 and 11
 > Download `CP210x Universal Windows Driver.zip` from [oemdrivers.com](https://oemdrivers.com/rs232-esp8266-nodemcu-ndn) or from [silabs.com](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads). Unzip and install the `silabser.inf` file.
@@ -43,6 +51,7 @@ code --install-extension vsciot-vscode.vscode-arduino
 6. [How to Use OV7670](https://circuitdigest.com/microcontroller-projects/how-to-use-ov7670-camera-module-with-arduino)
 7. [ESP32 Arduino Core’s documentation](https://docs.espressif.com/projects/arduino-esp32)
 8. [ESP8266 Documentation](https://www.esp8266.com/)
+9. [ESP-IDF (Espressif IoT Development Framework) Documentations](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html)
 
 ## Helpful
 1. [Instructables](https://www.instructables.com/)
