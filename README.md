@@ -24,12 +24,14 @@ code --install-extension vsciot-vscode.vscode-arduino
 
 ### Miscellaneous
 1. [Arduino library for MFRC522](https://github.com/miguelbalboa/rfid)
+2. [Arduino core for the ESP32](https://github.com/espressif/arduino-esp32)
+3. [ESP32 Camera Driver](https://github.com/espressif/esp32-camera)
 
 ## Documentations and References
 1. [Arduino UNO R3 datasheet](./Docs/A000066-datasheet.pdf)
 2. [Arduino-cli documentations](https://arduino.github.io/arduino-cli)
 3. [How to Use OV7670](https://circuitdigest.com/microcontroller-projects/how-to-use-ov7670-camera-module-with-arduino)
-
+4. [ESP32 Arduino Core’s documentation](https://docs.espressif.com/projects/arduino-esp32)
 ## Helpful
 1. [Instructables](https://www.instructables.com/)
 2. [Alldatasheet](https://www.alldatasheet.com/)
