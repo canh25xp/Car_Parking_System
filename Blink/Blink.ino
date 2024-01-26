@@ -1,3 +1,4 @@
+// A simple Sketch for testing out the Arduino. No IO pin connection is needed.
 void setup(){
     pinMode(LED_BUILTIN, OUTPUT); // initialize digital pin LED_BUILTIN as an output.
 }
