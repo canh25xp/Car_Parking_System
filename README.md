@@ -37,10 +37,12 @@ code --install-extension vsciot-vscode.vscode-arduino
 ## Documentations and References
 1. [Arduino Language References](https://www.arduino.cc/reference/en/)
 2. [Arduino UNO R3 datasheet](./Docs/A000066-datasheet.pdf)
-3. [Arduino-cli documentations](https://arduino.github.io/arduino-cli)
-4. [How to Use OV7670](https://circuitdigest.com/microcontroller-projects/how-to-use-ov7670-camera-module-with-arduino)
-5. [ESP32 Arduino Core’s documentation](https://docs.espressif.com/projects/arduino-esp32)
-6. [ESP8266 Documentation](https://www.esp8266.com/)
+3. [ESP32 datasheet](./Docs/esp32_datasheet_en.pdf)
+4. [ESP32-CAM datasheet](./Docs/ESP32-CAM_datasheet.pdf)
+5. [Arduino-cli documentations](https://arduino.github.io/arduino-cli)
+6. [How to Use OV7670](https://circuitdigest.com/microcontroller-projects/how-to-use-ov7670-camera-module-with-arduino)
+7. [ESP32 Arduino Core’s documentation](https://docs.espressif.com/projects/arduino-esp32)
+8. [ESP8266 Documentation](https://www.esp8266.com/)
 
 ## Helpful
 1. [Instructables](https://www.instructables.com/)
