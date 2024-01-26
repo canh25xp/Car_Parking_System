@@ -46,3 +46,4 @@ code --install-extension vsciot-vscode.vscode-arduino
 1. [Instructables](https://www.instructables.com/)
 2. [Alldatasheet](https://www.alldatasheet.com/)
 3. [Components101](https://components101.com/)
+4. [ESP32 Examples and Tutorials](https://techtutorialsx.com/category/esp32/)
