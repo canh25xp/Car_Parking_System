@@ -36,7 +36,13 @@ Power consumption |  Flash off: 180mA@5V<br> Flash on and brightness max: 310mA@
 https://github.com/espressif/esp32-camera
 
 ## Documents and References
-- https://components101.com/modules/esp32-cam-camera-module
+- ESP32 datasheet [Downloaded Copy](./Docs/esp32_datasheet_en.pdf)
+- ESP32-CAM datasheet [Downloaded Copy](./Docs/ESP32-CAM_datasheet.pdf) | [Online](https://components101.com/modules/esp32-cam-camera-module)
+- [ESP32 Arduino Core’s documentation](https://docs.espressif.com/projects/arduino-esp32)
+- [ESP8266 Forum](https://www.esp8266.com/)
+- [ESP-IDF Documentations](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html)
+
+## Tutorials
 - Dronebotworkshop's Tutorial [Article](https://dronebotworkshop.com/esp32-cam-intro/) | [Youtube](https://www.youtube.com/watch?v=visj0KE5VtY)
 - How to setup and use ESP32 Cam with Micro USB WiFi Camera [Youtube](https://www.youtube.com/watch?v=RCtVxZnjPmY)
 - RandomNerd's Tutorial [Artical](https://randomnerdtutorials.com/esp32-cam-video-streaming-web-server-camera-home-assistant/) | [Youtube](https://www.youtube.com/watch?v=36p9To2hfak)

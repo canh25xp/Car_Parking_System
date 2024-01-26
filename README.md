@@ -45,16 +45,10 @@ Config arduino extension :
 ## Documentations and References
 1. [Arduino Language References](https://www.arduino.cc/reference/en/)
 2. [Arduino UNO R3 datasheet](./Docs/A000066-datasheet.pdf)
-3. [ESP32 datasheet](./Docs/esp32_datasheet_en.pdf)
-4. [ESP32-CAM datasheet](./Docs/ESP32-CAM_datasheet.pdf)
-5. [Arduino-cli documentations](https://arduino.github.io/arduino-cli)
-6. [How to Use OV7670](https://circuitdigest.com/microcontroller-projects/how-to-use-ov7670-camera-module-with-arduino)
-7. [ESP32 Arduino Core’s documentation](https://docs.espressif.com/projects/arduino-esp32)
-8. [ESP8266 Documentation](https://www.esp8266.com/)
-9. [ESP-IDF (Espressif IoT Development Framework) Documentations](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html)
+3. [Arduino-cli documentations](https://arduino.github.io/arduino-cli)
 
 ## Helpful
 1. [Instructables](https://www.instructables.com/)
 2. [Alldatasheet](https://www.alldatasheet.com/)
 3. [Components101](https://components101.com/)
-4. [ESP32 Examples and Tutorials](https://techtutorialsx.com/category/esp32/)
+<!-- 4. [ESP32 Examples and Tutorials](https://techtutorialsx.com/category/esp32/) -->
