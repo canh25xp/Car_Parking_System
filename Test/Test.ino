@@ -2,7 +2,8 @@
 
 // Config the ledPin acording to the testing board
 // const int ledPin = 4; // The flashlight on the ESP32-CAM board (GPIO 4)
-const int ledPin = LED_BUILTIN; // The built-in led on the Arduino board (GPIO 13)
+// const int ledPin = LED_BUILTIN; // The built-in led on the Arduino board (GPIO 13)
+const int ledPin = 2; // The built-in led on the nodeMCU board
 
 void setup(){
     pinMode(ledPin, OUTPUT); // initialize digital pin LED_BUILTIN as an output.
