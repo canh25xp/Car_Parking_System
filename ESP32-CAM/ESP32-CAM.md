@@ -50,3 +50,5 @@ Security | WPA/WPA2/WPA2-Enterprise/WPS
 
 ## Documents and References
 - https://components101.com/modules/esp32-cam-camera-module
+- Dronebotworkshop's Tutorial [Article](https://dronebotworkshop.com/esp32-cam-intro/) | [Youtube](https://www.youtube.com/watch?v=visj0KE5VtY)
+- How to setup and use ESP32 Cam with Micro USB WiFi Camera [Youtube](https://www.youtube.com/watch?v=RCtVxZnjPmY)
