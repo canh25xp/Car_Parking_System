@@ -46,7 +46,7 @@ https://github.com/espressif/esp32-camera
 - Dronebotworkshop's Tutorial [Article](https://dronebotworkshop.com/esp32-cam-intro/) | [Youtube](https://www.youtube.com/watch?v=visj0KE5VtY)
 - How to setup and use ESP32 Cam with Micro USB WiFi Camera [Youtube](https://www.youtube.com/watch?v=RCtVxZnjPmY)
 - RandomNerd's Tutorial [Artical](https://randomnerdtutorials.com/esp32-cam-video-streaming-web-server-camera-home-assistant/) | [Youtube](https://www.youtube.com/watch?v=36p9To2hfak)
-- https://www.youtube.com/watch?v=hSr557hppwY
-- https://www.youtube.com/watch?v=k_PJLkfqDuI&t=473s
-- https://www.youtube.com/watch?v=Sb08leLWOgA
-- https://www.youtube.com/watch?v=MKiITEsOwRA
+- ESP32-Cam Complete Guide [Youtube](https://www.youtube.com/watch?v=hSr557hppwY)
+- ESP32-CAM - Guide to making YOUR first DIY Security Camera [Youtube](https://www.youtube.com/watch?v=k_PJLkfqDuI&t=473s)
+- ESP32-Cam Quickstart with Arduino Code [Youtube](https://www.youtube.com/watch?v=Sb08leLWOgA)
+- Cheap Wi-Fi IP Surveillance Camera (Very little DIY needed) [Youtube](https://www.youtube.com/watch?v=MKiITEsOwRA)
