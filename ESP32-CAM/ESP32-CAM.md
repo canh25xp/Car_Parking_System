@@ -34,6 +34,9 @@ Power consumption |  Flash off: 180mA@5V<br> Flash on and brightness max: 310mA@
 ## Driver
 
 https://github.com/espressif/esp32-camera
+https://github.com/yoursunny/esp32cam
+https://github.com/easytarget/esp32-cam-webserver
+https://github.com/RuiSantosdotme/ESP32-CAM-Arduino-IDE
 
 ## Documents and References
 - ESP32 datasheet [Downloaded](./Docs/esp32_datasheet_en.pdf)
