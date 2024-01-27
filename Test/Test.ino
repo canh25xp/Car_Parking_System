@@ -2,6 +2,7 @@
 
 // Config the ledPin acording to the testing board
 // const int ledPin = 4; // The flashlight on the ESP32-CAM board (GPIO 4)
+// const int ledPin = 33; // The built-in led on the ESP32-CAM board (GPIO 33) next to the reset button
 // const int ledPin = LED_BUILTIN; // The built-in led on the Arduino board (GPIO 13)
 const int ledPin = 2; // The built-in led on the nodeMCU board
 
