@@ -63,6 +63,8 @@ GPIO 0|GND
 
 ### ESP32-CAM-MB USB Programmer
 
+![](https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2021/01/ESP32-CAM-MB-Micro-USB-Programmer-CH340G-Serial-Chip-for-OV2640.jpg)
+
 ## Documents and References
 - ESP32 datasheet [Downloaded](./Docs/esp32_datasheet_en.pdf)
 - ESP32-CAM datasheet [Downloaded](./ESP32-CAM_datasheet.pdf) | [Source](https://components101.com/modules/esp32-cam-camera-module)
