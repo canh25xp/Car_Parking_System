@@ -116,7 +116,7 @@ void setup() {
   Serial.println("Going to sleep now");
   delay(2000);
   esp_deep_sleep_start();
-  Serial.println("This will never be printed");
+  Serial.println("This should never be printed");
 }
 
 void loop() {
