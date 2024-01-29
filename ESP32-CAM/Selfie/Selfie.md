@@ -31,3 +31,6 @@ Saved file to path: /picture17.jpg
 Going to sleep now
 ---- Closed the serial port COM15 ----
 ```
+
+## Troubleshooting : common problems
+> https://randomnerdtutorials.com/esp32-cam-troubleshooting-guide/
