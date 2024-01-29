@@ -46,6 +46,7 @@ void setup() {
   config.pixel_format = PIXFORMAT_JPEG; 
   
   if(psramFound()){
+    Serial.println("Found PSRAM");
     config.frame_size = FRAMESIZE_UXGA; // FRAMESIZE_ + QVGA|CIF|VGA|SVGA|XGA|SXGA|UXGA
     config.jpeg_quality = 10;
     config.fb_count = 2;
@@ -62,7 +63,7 @@ void setup() {
     return;
   }
   
-  //Serial.println("Starting SD Card");
+  Serial.println("Starting SD Card");
   if(!SD_MMC.begin()){
     Serial.println("SD Card Mount Failed");
     return;
@@ -82,6 +83,7 @@ void setup() {
     Serial.println("Camera capture failed");
     return;
   }
+  
   // initialize EEPROM with predefined size
   EEPROM.begin(EEPROM_SIZE);
   pictureNumber = EEPROM.read(0) + 1;
