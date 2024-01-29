@@ -12,7 +12,9 @@
 #include "camera_pins.h"
 
 // define the number of bytes you want to access
+// 1 byte => allows us to generate up to 256 picture numbers.
 #define EEPROM_SIZE 1
+#define FLASH_LIGHT false
 
 int pictureNumber = 0;
 
@@ -108,9 +110,11 @@ void setup() {
   esp_camera_fb_return(fb);
 
   // Turns off the ESP32-CAM white on-board LED (flash) connected to GPIO 4
-  pinMode(LED_GPIO_NUM, OUTPUT);
-  digitalWrite(LED_GPIO_NUM, LOW);
-  rtc_gpio_hold_en(GPIO_NUM_4);
+  if (FLASH_LIGHT){
+    pinMode(LED_GPIO_NUM, OUTPUT);
+    digitalWrite(LED_GPIO_NUM, LOW);
+    rtc_gpio_hold_en(GPIO_NUM_4);
+  }
 
   delay(2000);
   Serial.println("Going to sleep now");
