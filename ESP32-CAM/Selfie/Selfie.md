@@ -1,5 +1,5 @@
 # ESP32-CAM taking selfie
-> Borrowing from [RandomNerdTutorials](https://RandomNerdTutorials.com/esp32-cam-take-photo-save-microsd-card)
+> borrowed from [RandomNerdTutorials](https://RandomNerdTutorials.com/esp32-cam-take-photo-save-microsd-card)
 ## What does it do ?
 This sketch taking photos with the ESP32-CAM and save it to MicroSD card.
 
