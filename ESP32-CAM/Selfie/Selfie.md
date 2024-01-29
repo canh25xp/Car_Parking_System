@@ -34,3 +34,6 @@ Going to sleep now
 
 ## Troubleshooting : common problems
 > https://randomnerdtutorials.com/esp32-cam-troubleshooting-guide/
+
+## References
+- [ESP32 Data Logging Temperature to MicroSD Card](https://randomnerdtutorials.com/esp32-data-logging-temperature-to-microsd-card/)
