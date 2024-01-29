@@ -22,27 +22,12 @@
 #include "driver/rtc_io.h"
 #include <EEPROM.h>            // read and write from flash memory
 
+// Pin definition for CAMERA_MODEL_AI_THINKER
+#define CAMERA_MODEL_AI_THINKER // Has PSRAM
+#include "camera_pins.h"
+
 // define the number of bytes you want to access
 #define EEPROM_SIZE 1
-
-// Pin definition for CAMERA_MODEL_AI_THINKER
-#define PWDN_GPIO_NUM     32
-#define RESET_GPIO_NUM    -1
-#define XCLK_GPIO_NUM      0
-#define SIOD_GPIO_NUM     26
-#define SIOC_GPIO_NUM     27
-
-#define Y9_GPIO_NUM       35
-#define Y8_GPIO_NUM       34
-#define Y7_GPIO_NUM       39
-#define Y6_GPIO_NUM       36
-#define Y5_GPIO_NUM       21
-#define Y4_GPIO_NUM       19
-#define Y3_GPIO_NUM       18
-#define Y2_GPIO_NUM        5
-#define VSYNC_GPIO_NUM    25
-#define HREF_GPIO_NUM     23
-#define PCLK_GPIO_NUM     22
 
 int pictureNumber = 0;
 
@@ -136,8 +121,8 @@ void setup() {
   esp_camera_fb_return(fb); 
   
   // Turns off the ESP32-CAM white on-board LED (flash) connected to GPIO 4
-  pinMode(4, OUTPUT);
-  digitalWrite(4, LOW);
+  pinMode(LED_GPIO_NUM, OUTPUT);
+  digitalWrite(LED_GPIO_NUM, LOW);
   rtc_gpio_hold_en(GPIO_NUM_4);
   
   delay(2000);
