@@ -43,6 +43,26 @@ https://github.com/easytarget/esp32-cam-webserver
 https://github.com/RuiSantosdotme/ESP32-CAM-Arduino-IDE
 https://github.com/espressif/esp-idf
 
+## Programmer
+There're several ways to upload the code to the ESP32-CAM board : 
+- Using an FTDI programmer
+- Using ESP32-CAM-MB USB Programmer (The easier one and the one we use)
+
+### FTDI programmer
+ESP32-CAM|FTDI Programmer
+-|-
+GND|GND
+5V|VCC (5V)
+U0R|TX
+U0T|RX
+GPIO 0|GND
+
+**Important**: GPIO 0 needs to be connected to able to upload code.
+
+![](https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2019/12/ESP32-CAM-FTDI-programmer-5V-supply.png)
+
+### ESP32-CAM-MB USB Programmer
+
 ## Documents and References
 - ESP32 datasheet [Downloaded](./Docs/esp32_datasheet_en.pdf)
 - ESP32-CAM datasheet [Downloaded](./ESP32-CAM_datasheet.pdf) | [Source](https://components101.com/modules/esp32-cam-camera-module)
