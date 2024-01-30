@@ -9,7 +9,7 @@
 The ESP32-CAM is a small-size, low-power camera module based on ESP32. It comes with an OV2640 camera and provides an onboard TF card slot. This board has 4MB PSRAM which is used for buffering images from the camera into video streaming or other tasks and allows you to use higher quality in your pictures without crashing the ESP32. It also comes with an onboard LED for flash and several GPIOs to connect peripherals.
 
 ## Specification
-> [Datasheet](./ESP32-CAM_datasheet.pdf)
+> [Datasheet](./ESP32-CAM_datasheet.pdf) | [Schematic](./ESP32_CAM_Schematic.pdf)
 
 Name | Value
 -|-
