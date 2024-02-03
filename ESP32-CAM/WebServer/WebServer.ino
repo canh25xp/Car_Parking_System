@@ -90,11 +90,11 @@ void loop(){
             } else if (header.indexOf("GET /led/on") >= 0) {
               Serial.println("LED on");
               LED_STATE = "on";
-              digitalWrite(LED_PIN, HIGH);
+              digitalWrite(LED_PIN, LOW);
             } else if (header.indexOf("GET /led/off") >= 0) {
               Serial.println("LED off");
               LED_STATE = "off";
-              digitalWrite(LED_PIN, LOW);
+              digitalWrite(LED_PIN, HIGH);
             }
             
             // Display the HTML web page
