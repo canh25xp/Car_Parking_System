@@ -35,6 +35,18 @@ Power consumption |  Flash off: 180mA@5V<br> Flash on and brightness max: 310mA@
 
 ![Alt text](ESP32-CAM-Pinout.jpg)
 
+### Flashlight (GPIO 4)
+
+That GPIO is also connected to the microSD card slot, so you may have troubles when trying to use both at the same time – the flashlight will light up when using the microSD card.
+
+Workaround: this works and that the LED will not make that flash effect. However, the LED remains on with low brightness (not sure why).
+```cpp
+SD_MMC.begin("/sdcard", true);
+```
+
+### Built-in Red LED (GPIO 33)
+The LED is active low.
+
 ### Camera pins connections 
 
 OV2640 CAMERA|ESP32|Variable name in code
@@ -133,3 +145,5 @@ However, since we cannot just plug any board into ESP32-CAM-MB as a shield, we w
 - Cheap Wi-Fi IP Surveillance Camera (Very little DIY needed) [Youtube](https://www.youtube.com/watch?v=MKiITEsOwRA)
 - [Upload Code to ESP32-CAM AI-Thinker using ESP32-CAM-MB USB Programmer (easiest way)](https://randomnerdtutorials.com/upload-code-esp32-cam-mb-usb/)
 - [Using the ESP32-CAM-MB programmer to flash any ESP32 board](https://www.espboards.dev/blog/flash-any-esp32-with-esp32-cam-mb/)
+- [ESP32-CAM AI-Thinker Pinout Guide: GPIOs Usage Explained](https://randomnerdtutorials.com/esp32-cam-ai-thinker-pinout/)
+- [ESP32 Pinout Reference](https://randomnerdtutorials.com/esp32-pinout-reference-gpios/)
