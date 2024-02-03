@@ -35,7 +35,7 @@ void setup() {
   pinMode(LED_PIN, OUTPUT);
   // Set outputs to LOW
   digitalWrite(FLASH_PIN, LOW);
-  digitalWrite(LED_PIN, LOW);
+  digitalWrite(LED_PIN, HIGH);  // the built-in led is active low
 
   // Connect to Wi-Fi network with SSID and password
   Serial.print("Connecting to ");
