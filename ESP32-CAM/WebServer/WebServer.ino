@@ -1,9 +1,3 @@
-/*********
-  Rui Santos
-  Complete project details at http://randomnerdtutorials.com  
-*********/
-
-// Load Wi-Fi library
 #include <WiFi.h>
 
 // Replace with your network credentials
@@ -20,8 +14,8 @@ WiFiServer server(80);
 String header;
 
 // Auxiliar variables to store the current output state
-String output26State = "off";
-String output27State = "off";
+String FLASH_STATE = "off";
+String LED_STATE = "off";
 
 // Assign output variables to GPIO pins
 const int FLASH_PIN = 4;
@@ -85,21 +79,21 @@ void loop(){
             client.println();
             
             // turns the GPIOs on and off
-            if (header.indexOf("GET /26/on") >= 0) {
-              Serial.println("GPIO 26 on");
-              output26State = "on";
+            if (header.indexOf("GET /flash/on") >= 0) {
+              Serial.println("FLASH on");
+              FLASH_STATE = "on";
               digitalWrite(FLASH_PIN, HIGH);
-            } else if (header.indexOf("GET /26/off") >= 0) {
-              Serial.println("GPIO 26 off");
-              output26State = "off";
+            } else if (header.indexOf("GET /flash/off") >= 0) {
+              Serial.println("FLASH off");
+              FLASH_STATE = "off";
               digitalWrite(FLASH_PIN, LOW);
-            } else if (header.indexOf("GET /27/on") >= 0) {
-              Serial.println("GPIO 27 on");
-              output27State = "on";
+            } else if (header.indexOf("GET /led/on") >= 0) {
+              Serial.println("LED on");
+              LED_STATE = "on";
               digitalWrite(LED_PIN, HIGH);
-            } else if (header.indexOf("GET /27/off") >= 0) {
-              Serial.println("GPIO 27 off");
-              output27State = "off";
+            } else if (header.indexOf("GET /led/off") >= 0) {
+              Serial.println("LED off");
+              LED_STATE = "off";
               digitalWrite(LED_PIN, LOW);
             }
             
@@ -117,22 +111,22 @@ void loop(){
             // Web Page Heading
             client.println("<body><h1>ESP32 Web Server</h1>");
             
-            // Display current state, and ON/OFF buttons for GPIO 26  
-            client.println("<p>GPIO 26 - State " + output26State + "</p>");
-            // If the output26State is off, it displays the ON button       
-            if (output26State=="off") {
-              client.println("<p><a href=\"/26/on\"><button class=\"button\">ON</button></a></p>");
+            // Display current state, and ON/OFF buttons for FLASH_PIN
+            client.println("<p>FLASH_STATE " + FLASH_STATE + "</p>");
+            // If the FLASH_STATE is off, it displays the ON button       
+            if (FLASH_STATE=="off") {
+              client.println("<p><a href=\"/flash/on\"><button class=\"button\">ON</button></a></p>");
             } else {
-              client.println("<p><a href=\"/26/off\"><button class=\"button button2\">OFF</button></a></p>");
+              client.println("<p><a href=\"/flash/off\"><button class=\"button button2\">OFF</button></a></p>");
             } 
                
-            // Display current state, and ON/OFF buttons for GPIO 27  
-            client.println("<p>GPIO 27 - State " + output27State + "</p>");
-            // If the output27State is off, it displays the ON button       
-            if (output27State=="off") {
-              client.println("<p><a href=\"/27/on\"><button class=\"button\">ON</button></a></p>");
+            // Display current state, and ON/OFF buttons for LED_PIN  
+            client.println("<p>LED_STATE " + LED_STATE + "</p>");
+            // If the LED_STATE is off, it displays the ON button       
+            if (LED_STATE=="off") {
+              client.println("<p><a href=\"/led/on\"><button class=\"button\">ON</button></a></p>");
             } else {
-              client.println("<p><a href=\"/27/off\"><button class=\"button button2\">OFF</button></a></p>");
+              client.println("<p><a href=\"/led/off\"><button class=\"button button2\">OFF</button></a></p>");
             }
             client.println("</body></html>");
             
