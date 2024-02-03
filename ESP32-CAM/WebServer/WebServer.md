@@ -12,8 +12,4 @@ WL_NO_SSID_AVAIL| when no SSID are available
 WL_SCAN_COMPLETED| when the scan networks is completed
 WL_CONNECT_FAILED| when the connection fails for all the attempts
 WL_CONNECTION_LOST| when the connection is lost
-WL_DISCONNECTED| when disconnected from a netwo
-
-## References
-
-- [Create A Simple ESP32 Web Server In Arduino IDE](https://lastminuteengineers.com/creating-esp32-web-server-arduino-ide/)
+WL_DISCONNECTED| when disconnected from a network
