@@ -17,9 +17,8 @@ The vscode-arduino already bundled with its own arduino-cli, how ever I prefer u
 ```sh
 winget install ArduinoSA.CLI
 ```
-Config arduino extension :
+Config arduino extension `%Appdata%/Code/User/settings.json` :
 ```json
-// %Appdata%/Code/User/settings.json
 {
    "arduino.useArduinoCli": true,
    "arduino.path": "C:\\Program Files\\Arduino CLI",
