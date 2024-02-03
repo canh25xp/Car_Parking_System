@@ -2,3 +2,4 @@
 *.exe
 Smart_parking/
 build/
+password.h
