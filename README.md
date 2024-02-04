@@ -5,6 +5,18 @@ Quick Links:
    - [About nodeMCU](./nodeMCU/nodeMCU.md)
    - [About RC522](./RC522/RC522.md)
 
+Structure of this projects:
+```bash
+Car_Parking_System
+    ├─── ...
+    ├───ArduinoUno      # Documentations and sketches for Arduino Uno R3 board
+    ├───Docs            # General Documentations for this project
+    ├───ESP32-CAM       # Documentations and sketches for the ESP32-CAM board
+    ├───nodeMCU         # Documentations and sketches for the nodeMCU board
+    ├───Simulation      # Proteus simulation (not up to date with this project)
+    └───Test            # Quick test for all the boards
+```
+
 ## Tools and Requirements
 ### Software
 1. [VScode](https://code.visualstudio.com/) and [Arduino extension](https://github.com/microsoft/vscode-arduino)
