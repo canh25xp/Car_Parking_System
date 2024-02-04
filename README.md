@@ -3,7 +3,8 @@
 Quick Links:
    - [About ESP32-CAM](./ESP32-CAM/ESP32-CAM.md)
    - [About nodeMCU](./nodeMCU/nodeMCU.md)
-   - [About RC522](./RC522/RC522.md)
+   - [About Arduino Uno R3](./ArduinoUno/ArduinoUno.md)
+   - [About RC522](./nodeMCU\RC522\RC522.md)
 
 Structure of this projects:
 ```bash
