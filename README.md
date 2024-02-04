@@ -42,8 +42,7 @@ Config arduino extension `%Appdata%/Code/User/settings.json` :
 
 ## Documentations and References
 1. [Arduino Language References](https://www.arduino.cc/reference/en/)
-2. [Arduino UNO R3 datasheet](./ArduinoUno/ArduinoUno-R3_datasheet.pdf)
-3. [Arduino-cli documentations](https://arduino.github.io/arduino-cli)
+2. [Arduino-cli documentations](https://arduino.github.io/arduino-cli)
 
 ## Helpful
 1. [Instructables](https://www.instructables.com/)
