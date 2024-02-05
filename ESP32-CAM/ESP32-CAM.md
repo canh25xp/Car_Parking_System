@@ -129,8 +129,8 @@ So the ESP32-CAM-MB uses a CH340G USB-to-UART chip and has it wired to RX and TX
 However, since we cannot just plug any board into ESP32-CAM-MB as a shield, we will have to connect the pins manually.
 
 ## Documents and References
-- ESP32 datasheet [Downloaded](./Docs/esp32_datasheet_en.pdf)
-- ESP32-CAM datasheet [Downloaded](./ESP32-CAM_datasheet.pdf) | [Source](https://components101.com/modules/esp32-cam-camera-module)
+- ESP32 datasheet [Downloaded](./Resources/esp32_datasheet_en.pdf)
+- ESP32-CAM datasheet [Downloaded](./Resources/ESP32-CAM_datasheet.pdfpdf) | [Source](https://components101.com/modules/esp32-cam-camera-module)
 - [ESP32 Arduino Core’s documentation](https://docs.espressif.com/projects/arduino-esp32)
 - [ESP8266 Forum](https://www.esp8266.com/)
 - [ESP-IDF Documentations](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html)
