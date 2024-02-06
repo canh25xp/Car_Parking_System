@@ -109,7 +109,7 @@ The pins marked as green are connected and ready for use, while the ones marked 
 
 ## Documentations and References
 - ESP32 datasheet [Downloaded](./Docs/esp32_datasheet_en.pdf)
-- ESP32-CAM datasheet [Downloaded](./Docs/ESP32-CAM_datasheet.pdfpdf) | [Source](https://components101.com/modules/esp32-cam-camera-module)
+- ESP32-CAM datasheet [Downloaded](./Docs/ESP32-CAM_datasheet.pdf) | [Source](https://components101.com/modules/esp32-cam-camera-module)
 - [ESP32 Arduino Core’s documentation](https://docs.espressif.com/projects/arduino-esp32)
 - [ESP8266 Forum](https://www.esp8266.com/)
 - [ESP-IDF Documentations](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html)
