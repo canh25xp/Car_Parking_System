@@ -35,7 +35,6 @@
 // ===========================
 // Enter your WiFi credentials
 // ===========================
-// Put the ssid and password in the password.h file or just 
 // const char* ssid = "********";
 // const char* password = "********";
 #include "password.h"
