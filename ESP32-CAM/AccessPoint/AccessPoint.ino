@@ -2,8 +2,8 @@
 #include <WebServer.h>
 
 /* Put your SSID & Password */
-const char* ssid = "ESP32-CAM";
-const char* password = "12345678";
+const char* SSID        = "ESP32-CAM";
+const char* PASSWORD    = "12345678";
 
 /* Put IP Address details */
 IPAddress local_ip(192, 168, 1, 1);
@@ -23,7 +23,7 @@ void setup() {
     pinMode(LED1pin, OUTPUT);
     pinMode(LED2pin, OUTPUT);
 
-    WiFi.softAP(ssid, password);
+    WiFi.softAP(SSID, PASSWORD);
     WiFi.softAPConfig(local_ip, gateway, subnet);
     delay(100);
 
