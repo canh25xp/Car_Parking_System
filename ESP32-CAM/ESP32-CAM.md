@@ -95,29 +95,11 @@ GPIO 0|GND
 ![](https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2019/12/ESP32-CAM-FTDI-programmer-5V-supply.png)
 
 ### ESP32-CAM-MB USB Programmer
+The ESP32-CAM-MB uses a CH340G USB-to-UART chip and has it wired to RX and TX pins, meaning it is suitable to program any ESP32 chip, not only the ESP32-CAM board.
 
-The ESP32-CAM AI-Thinker MB programmer is a shield that you attach to your ESP32-CAM board GPIOs. The following image shows the programmer and the ESP32-CAM side by side.The programmer comes with the CH340C USB to serial chip. This allows you to program the ESP32-CAM using the USB port on the shield. Additionally, the shield also comes with a RESET and a BOOT (IO0) buttons. This may be useful to easily reset the ESP32-CAM or put it into flashing mode
-
-![](https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2021/01/ESP32-CAM-MB-Micro-USB-Programmer-CH340G-Serial-Chip-for-OV2640.jpg)
-
-The ESP32-CAM-MB pin-out is the same as ESP32-CAM board.
-
-![](https://www.espboards.dev/img/zhwCblrQ5x-1000.avif)
-
-By looking at the traces on ESP32-CAM-MB PCB, we could see that actually not all the pins are wired. But that is not a problem, since to program any ESP32 chip, we will need only RX, TX, 5V, GND and optionally GPIO 0 pins, which are all connected.
-
-![](https://www.espboards.dev/img/wpCj00LXoP-600.avif)
-
-Simply connect the MB programmer to the ESP32-CAM as shown in the following image. Then, connect the board to your computer using a USB cable.
-
-![](https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2021/01/ESP32-CAM-MB-Micro-USB-Programmer-CH340G-Serial-Chip-OV2640-Camera.jpg)
+![](https://www.espboards.dev/img/wpCj00LXoP-600.avif) ![](https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2021/01/ESP32-CAM-MB-Micro-USB-Programmer-CH340G-Serial-Chip-OV2640-Camera.jpg)
 
 The pins marked as green are connected and ready for use, while the ones marked as red are not connected.
-
-So the ESP32-CAM-MB uses a CH340G USB-to-UART chip and has it wired to RX and TX pins, meaning it is suitable to program any ESP32 chip, not only the ESP32-CAM board.
-
-However, since we cannot just plug any board into ESP32-CAM-MB as a shield, we will have to connect the pins manually.
-
 ## Driver and Framework
 https://github.com/espressif/esp32-camera
 https://github.com/yoursunny/esp32cam
