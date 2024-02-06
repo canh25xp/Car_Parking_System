@@ -3,8 +3,6 @@
 static const char* WIFI_SSID = "Michael";
 static const char* WIFI_PASS = "HelloWorld";
 
-esp32cam::Resolution initialResolution;
-
 WebServer server(80);
 
 void setup() {
@@ -22,8 +20,7 @@ void setup() {
     }
     Serial.println("WiFi connected");
 
-    initialResolution = esp32cam::Resolution::find(1024, 768);
-
+    esp32cam::Resolution initialResolution = esp32cam::Resolution::find(1024, 768);
     esp32cam::Config cfg;
     cfg.setPins(esp32cam::pins::AiThinker);
     cfg.setResolution(initialResolution);
