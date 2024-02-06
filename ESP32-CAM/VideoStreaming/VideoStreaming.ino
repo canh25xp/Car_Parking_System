@@ -8,7 +8,8 @@
 #include "soc/rtc_cntl_reg.h"   //disable brownout problems
 #include "esp_http_server.h"
 
-#include "password.h"
+const char* SSID     = "Michael";
+const char* PASSWORD = "HelloWorld";
 
 #define PART_BOUNDARY "123456789000000000000987654321"
 
@@ -143,8 +144,8 @@ void setup() {
   }
   // Wi-Fi connection
   Serial.print("Connecting to ");
-  Serial.println(ssid);
-  WiFi.begin(ssid, password);
+  Serial.println(SSID);
+  WiFi.begin(SSID, PASSWORD);
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
     Serial.print(".");

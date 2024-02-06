@@ -2,9 +2,8 @@
 #include <WiFi.h>
 #include <esp32cam.h>
 
-// const char* WIFI_SSID = "ssid";
-// const char* WIFI_PASS = "password";
-#include "password.h"
+const char* SSID     = "Michael";
+const char* PASSWORD = "HelloWorld";
 
 WebServer server(80);
 
@@ -33,7 +32,7 @@ void setup() {
 
     WiFi.persistent(false);
     WiFi.mode(WIFI_STA);
-    WiFi.begin(WIFI_SSID, WIFI_PASS);
+    WiFi.begin(SSID, PASSWORD);
     while (WiFi.status() != WL_CONNECTED) {
         delay(500);
     }

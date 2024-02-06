@@ -1,10 +1,8 @@
 #include <WiFi.h>
 
 // Replace with your network credentials
-// const char* ssid     = "********";
-// const char* password = "********";
-// Or include password in seperate file
-#include "password.h"
+const char* SSID     = "Michael";
+const char* PASSWORD = "HelloWorld";
 
 
 // Set web server port number to 80
@@ -39,8 +37,8 @@ void setup() {
 
     // Connect to Wi-Fi network with SSID and password
     Serial.print("Connecting to ");
-    Serial.println(ssid);
-    WiFi.begin(ssid, password);
+    Serial.println(SSID);
+    WiFi.begin(SSID, PASSWORD);
     while (WiFi.status() != WL_CONNECTED) {
         delay(500);
         Serial.print(".");

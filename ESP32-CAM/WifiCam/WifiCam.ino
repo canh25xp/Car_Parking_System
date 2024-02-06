@@ -1,7 +1,7 @@
 #include "WifiCam.hpp"
 
-static const char* WIFI_SSID = "Michael";
-static const char* WIFI_PASS = "HelloWorld";
+static const char* SSID = "Michael";
+static const char* PASS = "HelloWorld";
 
 WebServer server(80);
 
@@ -12,7 +12,7 @@ void setup() {
 
     WiFi.persistent(false);
     WiFi.mode(WIFI_STA);
-    WiFi.begin(WIFI_SSID, WIFI_PASS);
+    WiFi.begin(SSID, PASS);
     if (WiFi.waitForConnectResult() != WL_CONNECTED) {
         Serial.printf("WiFi failure %d\n", WiFi.status());
         delay(5000);

@@ -35,9 +35,8 @@
 // ===========================
 // Enter your WiFi credentials
 // ===========================
-// const char* ssid = "********";
-// const char* password = "********";
-#include "password.h"
+const char* SSID     = "Michael";
+const char* PASSWORD = "HelloWorld";
 
 void startCameraServer();
 void setupLedFlash(int pin);
@@ -135,7 +134,7 @@ void setup() {
     setupLedFlash(LED_GPIO_NUM);
 #endif
 
-    WiFi.begin(ssid, password);
+    WiFi.begin(SSID, PASSWORD);
     WiFi.setSleep(false);
 
     while (WiFi.status() != WL_CONNECTED) {
