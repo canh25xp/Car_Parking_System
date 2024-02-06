@@ -101,13 +101,13 @@ The ESP32-CAM-MB uses a CH340G USB-to-UART chip and has it wired to RX and TX pi
 
 The pins marked as green are connected and ready for use, while the ones marked as red are not connected.
 ## Driver and Framework
-https://github.com/espressif/esp32-camera
-https://github.com/yoursunny/esp32cam
-https://github.com/easytarget/esp32-cam-webserver
-https://github.com/RuiSantosdotme/ESP32-CAM-Arduino-IDE
-https://github.com/espressif/esp-idf
+- https://github.com/espressif/esp32-camera
+- https://github.com/yoursunny/esp32cam
+- https://github.com/easytarget/esp32-cam-webserver
+- https://github.com/RuiSantosdotme/ESP32-CAM-Arduino-IDE
+- https://github.com/espressif/esp-idf
 
-## Documents and References
+## Documentations and References
 - ESP32 datasheet [Downloaded](./Docs/esp32_datasheet_en.pdf)
 - ESP32-CAM datasheet [Downloaded](./Docs/ESP32-CAM_datasheet.pdfpdf) | [Source](https://components101.com/modules/esp32-cam-camera-module)
 - [ESP32 Arduino Core’s documentation](https://docs.espressif.com/projects/arduino-esp32)
