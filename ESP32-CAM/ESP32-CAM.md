@@ -78,14 +78,6 @@ DATA1 / flashlight|GPIO 4
 DATA2|GPIO 12
 DATA3|GPIO 13
 
-## Driver and Framework
-
-https://github.com/espressif/esp32-camera
-https://github.com/yoursunny/esp32cam
-https://github.com/easytarget/esp32-cam-webserver
-https://github.com/RuiSantosdotme/ESP32-CAM-Arduino-IDE
-https://github.com/espressif/esp-idf
-
 ## Programmer
 There're several ways to upload the code to the ESP32-CAM board : 
 - Using an FTDI programmer
@@ -127,6 +119,13 @@ The pins marked as green are connected and ready for use, while the ones marked 
 So the ESP32-CAM-MB uses a CH340G USB-to-UART chip and has it wired to RX and TX pins, meaning it is suitable to program any ESP32 chip, not only the ESP32-CAM board.
 
 However, since we cannot just plug any board into ESP32-CAM-MB as a shield, we will have to connect the pins manually.
+
+## Driver and Framework
+https://github.com/espressif/esp32-camera
+https://github.com/yoursunny/esp32cam
+https://github.com/easytarget/esp32-cam-webserver
+https://github.com/RuiSantosdotme/ESP32-CAM-Arduino-IDE
+https://github.com/espressif/esp-idf
 
 ## Documents and References
 - ESP32 datasheet [Downloaded](./Docs/esp32_datasheet_en.pdf)
