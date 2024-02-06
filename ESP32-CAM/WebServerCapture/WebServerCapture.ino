@@ -53,23 +53,23 @@ void handleJpgMid() {
 void  setup() {
     Serial.begin(115200);
     Serial.println();
-    {
-        using namespace esp32cam;
-        Config cfg;
-        cfg.setPins(pins::AiThinker);
-        cfg.setResolution(hiRes);
-        cfg.setBufferCount(2);
-        cfg.setJpeg(80);
 
-        bool ok = Camera.begin(cfg);
-        Serial.println(ok ? "CAMERA OK" : "CAMERA FAIL");
-    }
+    esp32cam::Config cfg;
+    cfg.setPins(esp32cam::pins::AiThinker);
+    cfg.setResolution(hiRes);
+    cfg.setBufferCount(2);
+    cfg.setJpeg(80);
+
+    bool ok = esp32cam::Camera.begin(cfg);
+    Serial.println(ok ? "CAMERA OK" : "CAMERA FAIL");
+
     WiFi.persistent(false);
     WiFi.mode(WIFI_STA);
     WiFi.begin(WIFI_SSID, WIFI_PASS);
     while (WiFi.status() != WL_CONNECTED) {
         delay(500);
     }
+    
     Serial.print("http://");
     Serial.println(WiFi.localIP());
     Serial.println("  /cam-lo.jpg");
