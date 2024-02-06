@@ -1,7 +1,7 @@
 #include "WifiCam.hpp"
 
 static const char* WIFI_SSID = "Michael";
-static const char* WIFI_PASS = "12345678";
+static const char* WIFI_PASS = "HelloWorld";
 
 esp32cam::Resolution initialResolution;
 
@@ -22,24 +22,20 @@ void setup() {
     }
     Serial.println("WiFi connected");
 
-    {
-        using namespace esp32cam;
+    initialResolution = esp32cam::Resolution::find(1024, 768);
 
-        initialResolution = Resolution::find(1024, 768);
+    esp32cam::Config cfg;
+    cfg.setPins(esp32cam::pins::AiThinker);
+    cfg.setResolution(initialResolution);
+    cfg.setJpeg(80);
 
-        Config cfg;
-        cfg.setPins(pins::AiThinker);
-        cfg.setResolution(initialResolution);
-        cfg.setJpeg(80);
-
-        bool ok = Camera.begin(cfg);
-        if (!ok) {
-            Serial.println("camera initialize failure");
-            delay(5000);
-            ESP.restart();
-        }
-        Serial.println("camera initialize success");
+    bool ok = esp32cam::Camera.begin(cfg);
+    if (!ok) {
+        Serial.println("camera initialize failure");
+        delay(5000);
+        ESP.restart();
     }
+    Serial.println("camera initialize success");
 
     Serial.println("camera starting");
     Serial.print("http://");
