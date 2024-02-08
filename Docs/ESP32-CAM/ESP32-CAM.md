@@ -4,10 +4,10 @@
 | :--------------------------------------: | :--------------------------------: |
 | ![](./ESP32-CAM+ESP32-CAM-MB+OV2640.jpg) | ![](./ESP32-CAM-Camera-Module.jpg) | -->
 
-![](./Docs/ESP32-CAM+ESP32-CAM-MB+OV2640.jpg) ![](./Docs/ESP32-CAM-Camera-Module.jpg)
+![](./ESP32-CAM+ESP32-CAM-MB+OV2640.jpg) ![](./ESP32-CAM-Camera-Module.jpg)
 
 ## Specification
-> [Datasheet](./Docs/ESP32-CAM_datasheet.pdf) | [Schematic](./Docs/ESP32_CAM_Schematic.pdf)
+> [Datasheet](./ESP32-CAM_datasheet.pdf) | [Schematic](./ESP32_CAM_Schematic.pdf)
 
 Name | Value
 -|-
@@ -31,7 +31,7 @@ Power consumption |  Flash off: 180mA@5V<br> Flash on and brightness max: 310mA@
 
 ## Pinout Diagram
 
-![Alt text](./Docs/ESP32-CAM-Pinout.jpg)
+![Alt text](./ESP32-CAM-Pinout.jpg)
 
 ### Flashlight (GPIO 4)
 
@@ -108,8 +108,8 @@ The pins marked as green are connected and ready for use, while the ones marked 
 - https://github.com/espressif/esp-idf
 
 ## Documentations and References
-- ESP32 datasheet [Downloaded](./Docs/esp32_datasheet_en.pdf)
-- ESP32-CAM datasheet [Downloaded](./Docs/ESP32-CAM_datasheet.pdf) | [Source](https://components101.com/modules/esp32-cam-camera-module)
+- ESP32 datasheet [Downloaded](./esp32_datasheet_en.pdf)
+- ESP32-CAM datasheet [Downloaded](./ESP32-CAM_datasheet.pdf) | [Source](https://components101.com/modules/esp32-cam-camera-module)
 - [ESP32 Arduino Core’s documentation](https://docs.espressif.com/projects/arduino-esp32)
 - [ESP8266 Forum](https://www.esp8266.com/)
 - [ESP-IDF Documentations](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html)
