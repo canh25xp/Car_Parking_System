@@ -40,6 +40,7 @@ Config arduino extension `%Appdata%/Code/User/settings.json` :
 ```
 3. ESP8266 NodeMCU Driver. [Download](https://www.silabs.com/documents/public/software/CP210x_Universal_Windows_Driver.zip) for windows 10 and 11
 > Download `CP210x Universal Windows Driver.zip` from [oemdrivers.com](https://oemdrivers.com/rs232-esp8266-nodemcu-ndn) or from [silabs.com](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads). Unzip and install the `silabser.inf` file.
+4. Fritzing desktop application. [Download](https://www.filehorse.com/download-fritzing-64/) | [Source code](https://github.com/fritzing/fritzing-app)
 ### Hardware
 1. Arduino Uno R3 Atmega328P. [3M](https://chotroihn.vn/kit-arduino-uno-r3-atmega328p-cam-k1b3-1-33g)
 2. Module ESP32-CAM [Shopee](https://shopee.vn/Module-thu-ph%C3%A1t-wifi-camera-ESP32-CAM-t%C3%ADch-h%E1%BB%A3p-wifi-camera-OV2640-OV7670-chuy%C3%AAn-d%E1%BB%A5ng-v%C3%A0-bluetooth-4-i.16504852.4665567596?sp_atk=18127f02-041a-4b08-a5a2-a6b657db24d3&xptdk=18127f02-041a-4b08-a5a2-a6b657db24d3&is_from_login=true)
