@@ -38,7 +38,10 @@ arduino-cli lib install MFRC522
 arduino-cli lib install --git-url https://github.com/miguelbalboa/rfid
 ```
 
-## References
+## Documentations and References
+1. [MFRC522 rfid wiki](https://github.com/miguelbalboa/rfid/wiki)
+
+## Tutorials
 1. [MFRC522 RFID Reader Interfaced With NodeMCU](https://www.instructables.com/MFRC522-RFID-Reader-Interfaced-With-NodeMCU/)
 2. [Using an RFID module with an ESP8266](https://www.aranacorp.com/en/using-an-rfid-module-with-an-esp8266/)
 3. [RFID RC522 Interfacing with NodeMCU](https://www.electronicwings.com/nodemcu/rfid-rc522-interfacing-with-nodemcu)
