@@ -8,16 +8,16 @@ LiquidCrystal_I2C lcd(0x27, LCD_COLUMNS, LCD_ROWS);
 
 Servo myservo;
 
-#define ir_enter 2
-#define servo_pin 3
-#define ir_back 4
+#define ir_enter 8
+#define servo_pin 9
+#define ir_back 10
 
-#define trig_1 8
-#define echo_1 9
-#define trig_2 10
-#define echo_2 11
-#define trig_3 12
-#define echo_3 13
+#define trig_1 7
+#define echo_1 6
+#define trig_2 5
+#define echo_2 4
+#define trig_3 3
+#define echo_3 2
 
 #define MAX_SLOT 3
 #define distanceThreshold 10
@@ -36,6 +36,8 @@ void setup() {
     pinMode(echo_2, INPUT);
     pinMode(trig_3, OUTPUT);
     pinMode(echo_3, INPUT);
+    pinMode(ir_back, INPUT);
+    pinMode(ir_enter, INPUT);
 
     lcd.begin(LCD_COLUMNS, LCD_ROWS);
     lcd.backlight();
