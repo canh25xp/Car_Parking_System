@@ -126,4 +126,4 @@ The pins marked as green are connected and ready for use, while the ones marked 
 - [Using the ESP32-CAM-MB programmer to flash any ESP32 board](https://www.espboards.dev/blog/flash-any-esp32-with-esp32-cam-mb/)
 - [ESP32-CAM AI-Thinker Pinout Guide: GPIOs Usage Explained](https://randomnerdtutorials.com/esp32-cam-ai-thinker-pinout/)
 - [ESP32 Pinout Reference](https://randomnerdtutorials.com/esp32-pinout-reference-gpios/)
-- 
+- [ESP32 SPI Communication: Set Pins, Multiple SPI Bus Interfaces, and Peripherals (Arduino IDE)](https://randomnerdtutorials.com/esp32-spi-communication-arduino/)
