@@ -14,7 +14,7 @@
 | Resolution           | 0.3 cm         |
 | Measuring Angle      | 15 degree      |
 | Trigger Input Signal | 10µS TTL pulse |
-| Dimensions           | 45 * 20 * 15mm |
+| Dimensions           | 43 * 22 * 17mm |
 
 Echo Output Signal Input TTL lever signal and the range in proportion
 
