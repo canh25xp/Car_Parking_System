@@ -49,3 +49,4 @@ arduino-cli lib install --git-url https://github.com/miguelbalboa/rfid
 - [RFID CARD READER WITH ARDUINO,RFID-RC522 and LCD 16x2](https://www.instructables.com/RFID-CARD-READER-WITH-ARDUINORFID-RC522-and-LCD-16/)
 - [How to Use the RFID-RC522 Module With Arduino](https://www.instructables.com/How-to-Use-the-RFID-RC522-Module-With-Arduino/)
 - [Yet Another Instructable on Using the DIYMall RFID-RC522 and Nokia LCD5110 With an Arduino](https://www.instructables.com/Yet-Another-Instructable-on-Using-the-DIYMall-RFID/)
+- [RC522 RFID Reader Module](https://microcontrollerslab.com/rc522-rfid-reader-pinout-arduino-interfacing-examples-features/)
