@@ -39,13 +39,13 @@ arduino-cli lib install --git-url https://github.com/miguelbalboa/rfid
 ```
 
 ## Documentations and References
-1. [MFRC522 rfid wiki](https://github.com/miguelbalboa/rfid/wiki)
+- [MFRC522 rfid wiki](https://github.com/miguelbalboa/rfid/wiki)
 
 ## Tutorials
-1. [MFRC522 RFID Reader Interfaced With NodeMCU](https://www.instructables.com/MFRC522-RFID-Reader-Interfaced-With-NodeMCU/)
-2. [Using an RFID module with an ESP8266](https://www.aranacorp.com/en/using-an-rfid-module-with-an-esp8266/)
-3. [RFID RC522 Interfacing with NodeMCU](https://www.electronicwings.com/nodemcu/rfid-rc522-interfacing-with-nodemcu)
-4. [RC522 RFID Reader Module with Arduino](https://microcontrollerslab.com/rc522-rfid-module-arduino-tutorial/)
-5. [RFID CARD READER WITH ARDUINO,RFID-RC522 and LCD 16x2](https://www.instructables.com/RFID-CARD-READER-WITH-ARDUINORFID-RC522-and-LCD-16/)
-6. [How to Use the RFID-RC522 Module With Arduino](https://www.instructables.com/How-to-Use-the-RFID-RC522-Module-With-Arduino/)
-7. [Yet Another Instructable on Using the DIYMall RFID-RC522 and Nokia LCD5110 With an Arduino](https://www.instructables.com/Yet-Another-Instructable-on-Using-the-DIYMall-RFID/)
+- [MFRC522 RFID Reader Interfaced With NodeMCU](https://www.instructables.com/MFRC522-RFID-Reader-Interfaced-With-NodeMCU/)
+- [Using an RFID module with an ESP8266](https://www.aranacorp.com/en/using-an-rfid-module-with-an-esp8266/)
+- [RFID RC522 Interfacing with NodeMCU](https://www.electronicwings.com/nodemcu/rfid-rc522-interfacing-with-nodemcu)
+- [RC522 RFID Reader Module with Arduino](https://microcontrollerslab.com/rc522-rfid-module-arduino-tutorial/)
+- [RFID CARD READER WITH ARDUINO,RFID-RC522 and LCD 16x2](https://www.instructables.com/RFID-CARD-READER-WITH-ARDUINORFID-RC522-and-LCD-16/)
+- [How to Use the RFID-RC522 Module With Arduino](https://www.instructables.com/How-to-Use-the-RFID-RC522-Module-With-Arduino/)
+- [Yet Another Instructable on Using the DIYMall RFID-RC522 and Nokia LCD5110 With an Arduino](https://www.instructables.com/Yet-Another-Instructable-on-Using-the-DIYMall-RFID/)
