@@ -1,19 +1,10 @@
-/*
- *
- * All the resources for this project: http://randomnerdtutorials.com/
- * Modified by Rui Santos
- *
- * Created by FILIPEFLOP
- *
- */
-
 #include <SPI.h>
 #include <MFRC522.h>
 
 const int ledPin = 2; // The built-in led on the nodeMCU board
 
-#define RST_PIN         D4             // Configurable, see typical pin layout above
-#define SS_PIN          D8             // Configurable, see typical pin layout above
+#define RST_PIN         D4
+#define SS_PIN          D8
 
 MFRC522 mfrc522(SS_PIN, RST_PIN);   // Create MFRC522 instance.
 
@@ -48,7 +39,7 @@ void loop() {
     Serial.println();
     Serial.print("Message : ");
     content.toUpperCase();
-    if (content.substring(1) == "43 61 49 96") { //change here the UID of the card/cards that you want to give access
+    if (content.substring(1) == "84 4F D7 DE") { //change here the UID of the card/cards that you want to give access
         Serial.println("Authorized access");
         Serial.println();
         digitalWrite(ledPin, HIGH);
