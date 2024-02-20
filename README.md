@@ -11,12 +11,10 @@ Structure of this projects:
 ```bash
 Car_Parking_System
     ├─── ...
-    ├───ArduinoUno      # Documentations and sketches for Arduino Uno R3 board
-    ├───Docs            # General Documentations for this project
-    ├───ESP32-CAM       # Documentations and sketches for the ESP32-CAM board
-    ├───nodeMCU         # Documentations and sketches for the nodeMCU board
+    ├───Docs            # Documentations for this project
+    ├───Main            # The Main source code files for the projects
     ├───Simulation      # Proteus simulation (not up to date with this project)
-    └───Test            # Quick test for all the boards
+    └───Test            # Quick test for various parts
 ```
 
 ## Tools and Requirements
