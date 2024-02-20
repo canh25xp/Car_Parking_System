@@ -19,21 +19,24 @@ LiquidCrystal_I2C lcd(0x27, LCDCOLUMNS, LCDROWS);
 
 MFRC522 mfrc522(SS_PIN, RST_PIN);   // Create MFRC522 instance.
 
-Servo myservo;  // create servo object to control a servo
+Servo barrie;  // create servo object to control a servo
 
 void setup() {
     Serial.begin(9600);   // Initiate a serial communication
 
-    myservo.attach(SERVO_PIN);  // attaches the servo on GIO2 to the servo object
+    barrie.attach(SERVO_PIN);  // attaches the servo on GIO2 to the servo object
 
     // initialize LCD
     lcd.init();
     lcd.backlight(); // turn on LCD backlight
 
+
     SPI.begin();      // Initiate  SPI bus
     mfrc522.PCD_Init();   // Initiate MFRC522
     Serial.println("Approximate your card to the reader...");
     Serial.println();
+
+    TestServo(barrie);
 }
 
 void loop() {
@@ -41,6 +44,7 @@ void loop() {
     lcd.setCursor(0, 0);
     // print message
     lcd.print("Hello, World!");
+    Close(barrie);
     delay(1000);
     // clears the display to print new message
     lcd.clear();
@@ -48,5 +52,21 @@ void loop() {
     lcd.setCursor(0, 1);
     lcd.print("Hello, World!");
     delay(1000);
+    Open(barrie);
     lcd.clear();
+}
+
+void TestServo(Servo _servo) {
+    for (int i = 0; i <= 180; i++) {
+        _servo.write(i);
+        delay(10);
+    }
+}
+
+void Close(Servo _servo) {
+    _servo.write(0);
+}
+
+void Open(Servo _servo) {
+    _servo.write(90);
 }
