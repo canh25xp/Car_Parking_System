@@ -5,12 +5,12 @@
 
 #include <NewPing.h>
 
-#define ECHO1 2
-#define TRIG1 3
-#define ECHO2 4
-#define TRIG2 5
-#define ECHO3 6
-#define TRIG3 7
+#define TRIG1 D1
+#define ECHO1 D2
+#define TRIG2 D3
+#define ECHO2 D4
+#define TRIG3 D5
+#define ECHO3 D6
 #define MAX_DISTANCE 200
 
 // NewPing setup of pins and maximum distance
