@@ -9,6 +9,7 @@
     "arduino.logLevel": "verbose",
     "files.exclude": {
         "**/.venv": true,
-        "**/build": true
+        "**/build": true,
+        "**/Log": true,
     }
 }
