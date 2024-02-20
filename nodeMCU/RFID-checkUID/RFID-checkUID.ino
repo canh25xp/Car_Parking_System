@@ -1,17 +1,18 @@
 #include <SPI.h>
 #include <MFRC522.h>
 
-const int ledPin = 2; // The built-in led on the nodeMCU board
+const int ledPin = D4; // The built-in led on the nodeMCU board
 
-#define RST_PIN         D4
+#define RST_PIN         D3
 #define SS_PIN          D8
 
 MFRC522 mfrc522(SS_PIN, RST_PIN);   // Create MFRC522 instance.
 
 void setup() {
-    Serial.begin(9600);   // Initiate a serial communication
-    SPI.begin();      // Initiate  SPI bus
-    mfrc522.PCD_Init();   // Initiate MFRC522
+    Serial.begin(9600);     // Initiate a serial communication
+    SPI.begin();            // Initiate  SPI bus
+    mfrc522.PCD_Init();     // Initiate MFRC522
+    delay(4);				// Optional delay. Some board do need more time after init to be ready, see Readme
     Serial.println("Approximate your card to the reader...");
     Serial.println();
     pinMode(ledPin, OUTPUT);
@@ -42,13 +43,13 @@ void loop() {
     if (content.substring(1) == "84 4F D7 DE") { //change here the UID of the card/cards that you want to give access
         Serial.println("Authorized access");
         Serial.println();
-        digitalWrite(ledPin, HIGH);
+        digitalWrite(ledPin, LOW);
         delay(3000);
     }
 
     else {
         Serial.println(" Access denied");
-        digitalWrite(ledPin, LOW);
+        digitalWrite(ledPin, HIGH);
         delay(3000);
     }
 }
