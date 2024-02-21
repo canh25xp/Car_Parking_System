@@ -7,8 +7,8 @@
 #define ECHO1 D2
 #define TRIG2 D3
 #define ECHO2 D5
-#define TRIG3 D4
-#define ECHO3 D6
+#define TRIG3 D6
+#define ECHO3 D7
 #define MAX_DISTANCE 50 // in cm
 
 // NewPing setup of pins and maximum distance
