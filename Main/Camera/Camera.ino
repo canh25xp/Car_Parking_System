@@ -14,6 +14,8 @@ void setup() {
     WiFi.persistent(false);
     WiFi.mode(WIFI_STA);
     WiFi.begin(SSID, PSWD);
+    Serial.print("Connecting to ");
+    Serial.println(SSID);
     if (WiFi.waitForConnectResult() != WL_CONNECTED) {
         Serial.printf("WiFi failure %d\n", WiFi.status());
         delay(5000);
@@ -21,10 +23,11 @@ void setup() {
     }
 
     Serial.println("");
-    Serial.print("Connected to ");
-    Serial.println(SSID);
+    Serial.println("Connected");
     Serial.print("IP address: ");
     Serial.println(WiFi.localIP());
+
+    WiFi.printDiag(Serial);
 
     esp32cam::Resolution initialResolution = esp32cam::Resolution::find(1024, 768);
     esp32cam::Config cfg;
