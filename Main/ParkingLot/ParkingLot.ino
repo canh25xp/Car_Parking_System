@@ -16,7 +16,12 @@
 const char* SSID = "Laptop";
 const char* PSWD = "Password";
 
-// NewPing setup of pins and maximum distance
+// Set your Static IP address
+IPAddress local_IP(192, 168, 1, 184);
+IPAddress gateway(192, 168, 1, 1);
+IPAddress subnet(255, 255, 255, 0);
+
+// Create ultrasonic sensor instances
 NewPing sonar1(TRIG1, ECHO1, MAX_DISTANCE);
 NewPing sonar2(TRIG2, ECHO2, MAX_DISTANCE);
 NewPing sonar3(TRIG3, ECHO3, MAX_DISTANCE);
@@ -26,19 +31,26 @@ AsyncWebServer server(80);
 
 void setup() {
     Serial.begin(115200);
-
     Serial.println("");
+
+    // Configures static IP address
+    // if (!WiFi.config(local_IP, gateway, subnet)) {
+    //     Serial.println("STA Failed to configure");
+    // }
+
+    Serial.print("Connecting to ");
+    Serial.println(SSID);
     WiFi.begin(SSID, PSWD);
     while (WiFi.status() != WL_CONNECTED) {
         delay(500);
         Serial.print(".");
     }
-
     Serial.println("");
-    Serial.print("Connected to ");
-    Serial.println(SSID);
+    Serial.println("Connected");
     Serial.print("IP address: ");
     Serial.println(WiFi.localIP());
+
+    WiFi.printDiag(Serial);
 
     server.on("/sonar1", HTTP_GET, [] (AsyncWebServerRequest* request) {
         request->send_P(200, "text/plain", String(sonar1.ping_cm()).c_str());
