@@ -3,6 +3,7 @@
 #include <ESP8266WiFi.h>
 #include <ESPAsyncWebServer.h>
 
+// Pins connections
 #define TRIG1 D1
 #define ECHO1 D2
 #define TRIG2 D3
@@ -11,20 +12,22 @@
 #define ECHO3 D7
 #define MAX_DISTANCE 50 // in cm
 
+// Wifi credential
+const char* SSID = "Wifiname";
+const char* PSWD = "Password";
+
 // NewPing setup of pins and maximum distance
 NewPing sonar1(TRIG1, ECHO1, MAX_DISTANCE);
 NewPing sonar2(TRIG2, ECHO2, MAX_DISTANCE);
 NewPing sonar3(TRIG3, ECHO3, MAX_DISTANCE);
 
 
-const char* SSID = "Wifiname";
-const char* PSWD = "Password";
-
 AsyncWebServer server(80);
 
 void setup() {
     Serial.begin(115200);
 
+    Serial.println("");
     WiFi.begin(SSID, PSWD);
     while (WiFi.status() != WL_CONNECTED) {
         delay(500);
