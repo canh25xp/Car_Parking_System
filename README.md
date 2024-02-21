@@ -72,4 +72,5 @@ Config arduino extension `%Appdata%/Code/User/settings.json` :
 1. [Instructables](https://www.instructables.com/)
 2. [Alldatasheet](https://www.alldatasheet.com/)
 3. [Components101](https://components101.com/)
+4. [Randomnerdtutorials](https://randomnerdtutorials.com/projects-esp32-cam/) This site has some pretty detail and easy-to-follow tutorials.
 <!-- 4. [ESP32 Examples and Tutorials](https://techtutorialsx.com/category/esp32/) -->
