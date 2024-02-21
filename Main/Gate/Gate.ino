@@ -77,7 +77,7 @@ void setup() {
     // Initialize LCD
     lcd.init();
     lcd.backlight();
-    Test_LCD();
+    LCD_Greeting();
 
     // Initialize SPI bus
     SPI.begin();
@@ -164,7 +164,7 @@ String httpGETRequest(const char* serverName) {
 }
 
 
-void Test_LCD() {
+void LCD_Greeting() {
     lcd.clear();
     lcd.setCursor(0, 0);
     lcd.print("PARKING SYSTEM");
