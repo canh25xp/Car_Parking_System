@@ -34,12 +34,13 @@ void setup() {
     // Initialize Serial Communication
     Serial.begin(9600);
 
-    // Init and test the servo
+    // Test the servo (Sweep from 0 to 180 degree)
     barrier.Test();
 
     // Initialize LCD
     lcd.init();
     lcd.backlight();
+    Test_LCD();
 
     // Initialize SPI bus
     SPI.begin();
@@ -65,20 +66,6 @@ void loop() {
     lcd.clear();
     lcd.setCursor(0, 0);
     lcd.print(UID);
-    delay(3000);
-
-
-    // lcd.setCursor(0, 0); // set cursor to first column, first row
-    // lcd.print("Close");
-    // Servo_Close();
-    // delay(1000);
-    // lcd.clear();
-
-    // lcd.setCursor(0, 1); // set cursor to first column, second row
-    // lcd.print("Open");
-    // Servo_Open();
-    // delay(1000);
-    // lcd.clear();
 }
 
 String RFID_GetUID() {
@@ -89,4 +76,13 @@ String RFID_GetUID() {
     }
     content.toUpperCase();
     return content.substring(1);
+}
+
+void Test_LCD() {
+    lcd.clear();
+    lcd.setCursor(0, 0);
+    lcd.print("PARKING SYSTEM");
+    lcd.setCursor(0, 1);
+    lcd.print("HUST PRODUCTION");
+    delay(1000);
 }
