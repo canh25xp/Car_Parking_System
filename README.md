@@ -1,13 +1,13 @@
 # A Car Parking System in Arduino
 
 Quick Links:
-   - [Workspace](https://aka.ms/edge/workspaceslaunch?code=dHlwZT0xJmlkPWFIUjBjSE02THk5b2IyMWxMbTFwWTNKdmMyOW1kSEJsY25OdmJtRnNZMjl1ZEdWdWRDNWpiMjB2T25VNkwyY3ZZMjl1ZEdWdWRITjBiM0poWjJVdk5rTjZibWxvVGpOMk1IVjVNWHBMTlVaeVVrTmlkMlpsWTJKbFpHTmpOV0kyWldJNU1qZDNiM0pyYzNCaFkyVnpMMGxSU1RaMlNHUnBkbkpvZFZOdmIxTlViM3BIYkRaVFZVRmllRXRKY0dKbFZsRmpXSGhVT1VScFF6aENTSEpKJnN0b3JlPTUmc291cmNlPVdvcmtzcGFjZXMmcmVkZWVtQ29kZT1kdW1teV9zZWVkJmFwcElkR3VpZD1iNmQ4MzNjZi1iNTRlLTRjYWItODE0My0xMzE4ZTBiYzUwZTE%3D&source=Workspaces)
-   - [About ESP32-CAM](./ESP32-CAM/ESP32-CAM.md)
-   - [About nodeMCU](./nodeMCU/nodeMCU.md)
-   - [About Arduino Uno R3](./ArduinoUno/ArduinoUno.md)
-   - [About RC522](./nodeMCU\RC522\RC522.md)
+   - [Microsoft Edge's Workspace](https://aka.ms/edge/workspaceslaunch?code=dHlwZT0xJmlkPWFIUjBjSE02THk5b2IyMWxMbTFwWTNKdmMyOW1kSEJsY25OdmJtRnNZMjl1ZEdWdWRDNWpiMjB2T25VNkwyY3ZZMjl1ZEdWdWRITjBiM0poWjJVdk5rTjZibWxvVGpOMk1IVjVNWHBMTlVaeVVrTmlkMlpsWTJKbFpHTmpOV0kyWldJNU1qZDNiM0pyYzNCaFkyVnpMMGxSU1RaMlNHUnBkbkpvZFZOdmIxTlViM3BIYkRaVFZVRmllRXRKY0dKbFZsRmpXSGhVT1VScFF6aENTSEpKJnN0b3JlPTUmc291cmNlPVdvcmtzcGFjZXMmcmVkZWVtQ29kZT1kdW1teV9zZWVkJmFwcElkR3VpZD1iNmQ4MzNjZi1iNTRlLTRjYWItODE0My0xMzE4ZTBiYzUwZTE%3D&source=Workspaces)
+   - [About ESP32-CAM](./Docs/ESP32-CAM/ESP32-CAM.md)
+   - [About ESP8266-nodeMCU](./Docs/nodeMCU/nodeMCU.md)
+   - [About Arduino Uno R3](./Docs/ArduinoUno/ArduinoUno.md)
+   - [About RFID-RC522](./Docs/RFID-RC522/RFID-RC522.md)
 
-Structure of this projects:
+Structure of this pr-SRojects:
 ```bash
 Car_Parking_System
     ├─── ...
@@ -42,10 +42,12 @@ Config arduino extension `%Appdata%/Code/User/settings.json` :
 ### Hardware
 1. Arduino Uno R3 Atmega328P. [3M](https://chotroihn.vn/kit-arduino-uno-r3-atmega328p-cam-k1b3-1-33g)
 2. Module ESP32-CAM [Shopee](https://shopee.vn/Module-thu-ph%C3%A1t-wifi-camera-ESP32-CAM-t%C3%ADch-h%E1%BB%A3p-wifi-camera-OV2640-OV7670-chuy%C3%AAn-d%E1%BB%A5ng-v%C3%A0-bluetooth-4-i.16504852.4665567596?sp_atk=18127f02-041a-4b08-a5a2-a6b657db24d3&xptdk=18127f02-041a-4b08-a5a2-a6b657db24d3&is_from_login=true)
-3. Module RFID-RC522. [3M](https://chotroihn.vn/module-rfid-rc522-13-56mhz) | [Shopee](https://shopee.vn/Module-RFID-RC522-13.56MHz-i.1048311475.23276547694?sp_atk=302ec86c-8f49-4239-a033-c793717cb7d1&xptdk=302ec86c-8f49-4239-a033-c793717cb7d1)
-4. RFID Card FM1108IC. [3M](https://chotroihn.vn/the-rfid-trang-fm1108ic-rc522-13-56mhz-k1a5-1-18g) | [Shopee](https://shopee.vn/Th%E1%BA%BB-RFID-tr%E1%BA%AFng-FM1108IC-RC522-13.56Mhz-gi%E1%BA%A3i-ph%C3%A1p-nh%E1%BA%ADn-di%E1%BB%87n-t%E1%BB%B1-%C4%91%E1%BB%99ng-i.1048311475.22787927981?sp_atk=4c70ab87-60c0-4f02-8a3d-7effe50b5a8f&xptdk=4c70ab87-60c0-4f02-8a3d-7effe50b5a8f)
-5. Module ESP32 Node MCU Luanode32 CP2102 [Shopee](https://shopee.vn/Module-ESP32-Node-MCU-Luanode32-CP2102-i.1048311475.22750978527?sp_atk=987cb89b-c2a9-4f13-8d74-1e85bf019716&xptdk=987cb89b-c2a9-4f13-8d74-1e85bf019716)
+3. Module ESP32 Node MCU Luanode32 CP2102 [Shopee](https://shopee.vn/Module-ESP32-Node-MCU-Luanode32-CP2102-i.1048311475.22750978527?sp_atk=987cb89b-c2a9-4f13-8d74-1e85bf019716&xptdk=987cb89b-c2a9-4f13-8d74-1e85bf019716)
+4. Module RFID-RC522. [3M](https://chotroihn.vn/module-rfid-rc522-13-56mhz) | [Shopee](https://shopee.vn/Module-RFID-RC522-13.56MHz-i.1048311475.23276547694?sp_atk=302ec86c-8f49-4239-a033-c793717cb7d1&xptdk=302ec86c-8f49-4239-a033-c793717cb7d1)
+5. RFID Card FM1108IC. [3M](https://chotroihn.vn/the-rfid-trang-fm1108ic-rc522-13-56mhz-k1a5-1-18g) | [Shopee](https://shopee.vn/Th%E1%BA%BB-RFID-tr%E1%BA%AFng-FM1108IC-RC522-13.56Mhz-gi%E1%BA%A3i-ph%C3%A1p-nh%E1%BA%ADn-di%E1%BB%87n-t%E1%BB%B1-%C4%91%E1%BB%99ng-i.1048311475.22787927981?sp_atk=4c70ab87-60c0-4f02-8a3d-7effe50b5a8f&xptdk=4c70ab87-60c0-4f02-8a3d-7effe50b5a8f)
    - Alternative : ESP8266 NodeMCU Lua V3 CH340 [Shopee](https://shopee.vn/K%C3%ADt-ESP8266-NodeMCU-Lua-V3-CH340-i.16504852.5450769770?sp_atk=608fc654-8cf7-4433-9dfe-d59d97191395&xptdk=608fc654-8cf7-4433-9dfe-d59d97191395)
+6. SG90 Servo Motor
+7. HC-SR04 Ultrasonic Sensor
 
 ### Miscellaneous
 1. [Arduino library for MFRC522](https://github.com/miguelbalboa/rfid)

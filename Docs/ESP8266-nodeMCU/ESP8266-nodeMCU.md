@@ -30,6 +30,7 @@ TX | GPIO1 | TX pin | OK | HIGH at boot; Debug output at boot, boot fails if pul
 A0 | ADC0 | Analog Input | X |
 
 ## Documents and References
+- [NodeMCU DEVKIT V1.0 (Github)](https://github.com/nodemcu/nodemcu-devkit-v1.0/tree/master)
 - [NodeMCU documenation](https://nodemcu.readthedocs.io/)
 - [NodeMCU firmware](https://github.com/nodemcu/nodemcu-firmware)
 - [NodeMCU datasheet](https://components101.com/development-boards/nodemcu-esp8266-pinout-features-and-datasheet)
