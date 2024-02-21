@@ -106,28 +106,23 @@ void loop() {
 
     unsigned long currentMillis = millis();
 
-    if (currentMillis - previousMillis >= interval) {
-        // Check WiFi connection status
-        if ((WiFiMulti.run() == WL_CONNECTED)) {
-            distance1 = httpGETRequest(sonar1);
-            distance2 = httpGETRequest(sonar2);
-            distance3 = httpGETRequest(sonar3);
-            Serial.println("Distance1: " + distance1 + " cm - Distance2: " + distance2 + " cm - Distance3: " + distance3 + " cm");
+    // Check WiFi connection status
+    if ((WiFiMulti.run() == WL_CONNECTED)) {
+        distance1 = httpGETRequest(sonar1);
+        distance2 = httpGETRequest(sonar2);
+        distance3 = httpGETRequest(sonar3);
+        Serial.println("Distance1: " + distance1 + " cm - Distance2: " + distance2 + " cm - Distance3: " + distance3 + " cm");
 
-            lcd.clear();
-            lcd.setCursor(0, 1);
-            lcd.print(distance1);
-            lcd.print(" ");
-            lcd.print(distance2);
-            lcd.print(" ");
-            lcd.print(distance3);
-            lcd.print(" ");
-            // save the last HTTP GET Request
-            previousMillis = currentMillis;
-        }
-        else {
-            Serial.println("WiFi Disconnected");
-        }
+        lcd.setCursor(0, 1);
+        lcd.print(distance1);
+        lcd.print(" ");
+        lcd.print(distance2);
+        lcd.print(" ");
+        lcd.print(distance3);
+        lcd.print(" ");
+    }
+    else {
+        Serial.println("WiFi Disconnected");
     }
 }
 
