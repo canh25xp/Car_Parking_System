@@ -8,3 +8,4 @@ main
 
 ## References
 - [ESP8266 Client-Server Wi-Fi Communication Between Two Boards (NodeMCU)](https://randomnerdtutorials.com/esp8266-nodemcu-client-server-wi-fi/)
+- [Communication between two ESP8266 via WiFi](https://www.aranacorp.com/en/communication-between-two-esp8266-via-wifi/)

@@ -1,7 +1,8 @@
 #include "Camera.hpp"
 
-static const char* SSID = "Laptop";
-static const char* PSWD = "Password";
+// Wifi credential
+const char* SSID = "Laptop";
+const char* PSWD = "Password";
 
 WebServer server(80);
 
@@ -18,7 +19,12 @@ void setup() {
         delay(5000);
         ESP.restart();
     }
-    Serial.println("WiFi connected");
+
+    Serial.println("");
+    Serial.print("Connected to ");
+    Serial.println(SSID);
+    Serial.print("IP address: ");
+    Serial.println(WiFi.localIP());
 
     esp32cam::Resolution initialResolution = esp32cam::Resolution::find(1024, 768);
     esp32cam::Config cfg;
@@ -33,10 +39,6 @@ void setup() {
         ESP.restart();
     }
     Serial.println("camera initialize success");
-
-    Serial.println("camera starting");
-    Serial.print("http://");
-    Serial.println(WiFi.localIP());
 
     addRequestHandlers();
     server.begin();
