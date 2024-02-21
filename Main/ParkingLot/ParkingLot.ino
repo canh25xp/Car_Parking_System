@@ -13,7 +13,7 @@
 #define MAX_DISTANCE 50 // in cm
 
 // Wifi credential
-const char* SSID = "Wifiname";
+const char* SSID = "Laptop";
 const char* PSWD = "Password";
 
 // NewPing setup of pins and maximum distance

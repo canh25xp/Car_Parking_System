@@ -27,7 +27,7 @@
 #define SERVO_PIN       D3
 
 // Wifi credential
-const char* SSID = "Wifiname";
+const char* SSID = "Laptop";
 const char* PSWD = "Password";
 
 // Create LCD instance
