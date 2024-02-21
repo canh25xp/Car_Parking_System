@@ -4,6 +4,7 @@
 #include <ESPAsyncWebServer.h>
 
 // Pins connections
+#define LOT_COUNT 3 // 3 sensor/parking lots
 #define TRIG1 D1
 #define ECHO1 D2
 #define TRIG2 D3
@@ -11,6 +12,7 @@
 #define TRIG3 D6
 #define ECHO3 D7
 #define MAX_DISTANCE 50 // in cm
+#define THRESHOLH 10
 
 // Wifi credential
 const char* SSID = "Laptop";
@@ -26,6 +28,9 @@ NewPing sonar1(TRIG1, ECHO1, MAX_DISTANCE);
 NewPing sonar2(TRIG2, ECHO2, MAX_DISTANCE);
 NewPing sonar3(TRIG3, ECHO3, MAX_DISTANCE);
 
+int val1 = 0;
+int val2 = 0;
+int val3 = 0;
 
 AsyncWebServer server(80);
 
@@ -61,17 +66,29 @@ void setup() {
     server.on("/sonar3", HTTP_GET, [] (AsyncWebServerRequest* request) {
         request->send_P(200, "text/plain", String(sonar3.ping_cm()).c_str());
         });
+    server.on("/status", HTTP_GET, [] (AsyncWebServerRequest* request) {
+        request->send_P(200, "text/plain", GetParkingLotStatus().c_str());
+        });
 
     server.begin();
 }
 
 void loop() {
-    // delay(2000);
-    // Serial.print(sonar1.ping_cm());
-    // Serial.println("cm");
-    // Serial.print(sonar2.ping_cm());
-    // Serial.println("cm");
-    // Serial.print(sonar3.ping_cm());
-    // Serial.println("cm");
-    // Serial.println("------");
+    Serial.println(GetParkingLotStatus());
+    delay(1000);
+}
+
+String GetParkingLotStatus() {
+    UpdateVal();
+    return String(IsEmptyLot(val1)) + " " + String(IsEmptyLot(val2)) + " " + String(IsEmptyLot(val3));
+}
+
+void UpdateVal() {
+    val1 = sonar1.ping_cm();
+    val2 = sonar2.ping_cm();
+    val3 = sonar3.ping_cm();
+}
+
+bool IsEmptyLot(int _distance) {
+    return (_distance > 0 && _distance < THRESHOLH) ? true : false;
 }
