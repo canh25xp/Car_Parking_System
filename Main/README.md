@@ -5,3 +5,6 @@ main
     ├───Gate            # Upload to the first ESP8266-NodeMCU
     └───ParkingLot      # Upload to the other ESP8266-NodeMCU
 ```
+
+## References
+- [ESP8266 Client-Server Wi-Fi Communication Between Two Boards (NodeMCU)](https://randomnerdtutorials.com/esp8266-nodemcu-client-server-wi-fi/)
