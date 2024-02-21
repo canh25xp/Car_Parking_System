@@ -59,7 +59,10 @@ Config arduino extension `%Appdata%/Code/User/settings.json` :
 3. [ESP8266 core for Arduino](https://github.com/esp8266/Arduino)
 4. [Arduino library for MFRC522](https://github.com/miguelbalboa/rfid)
 5. [WebSocket Server and Client for Arduino](https://github.com/Links2004/arduinoWebSockets)
-6. [Arduino_JSON Library for Arduino](https://github.com/arduino-libraries/Arduino_JSON)
+6. [Async Web Server for ESP8266 and ESP32](https://github.com/me-no-dev/ESPAsyncWebServer)
+7. [Async TCP Library for ESP8266](https://github.com/me-no-dev/ESPAsyncTCP)
+8. [Async TCP Library for ESP32](https://github.com/me-no-dev/AsyncTCP)
+9. [Arduino_JSON Library for Arduino](https://github.com/arduino-libraries/Arduino_JSON)
 
 ## Documentations and References
 1. [Arduino Language References](https://www.arduino.cc/reference/en/)
