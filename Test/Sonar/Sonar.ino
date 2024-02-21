@@ -1,8 +1,3 @@
-/*
- * Posted on https://randomnerdtutorials.com
- * created by http://playground.arduino.cc/Code/NewPing
-*/
-
 #include <NewPing.h>
 
 #define TRIG1 D1
