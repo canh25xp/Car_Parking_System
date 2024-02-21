@@ -1,5 +1,5 @@
 # WifiCam: WiFi camera HTTP server
-> Taken from [yoursunny/esp32cam](https://github.com/yoursunny/esp32cam/blob/main/examples/WifiCam)
+> Borrow from [yoursunny/esp32cam](https://github.com/yoursunny/esp32cam/blob/main/examples/WifiCam)
 
 This example runs on ESP32-CAM board.
 It provides an HTTP server where you can access BMP, JPG, and MJPEG formats in various resolutions.
