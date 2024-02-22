@@ -95,10 +95,6 @@ void onEvent(AsyncWebSocket* server, AsyncWebSocketClient* client, AwsEventType 
     }
 }
 
-void initWebSocket() {
-    ws.onEvent(onEvent);
-    server.addHandler(&ws);
-}
 
 String processor(const String& var) {
     Serial.println(var);
