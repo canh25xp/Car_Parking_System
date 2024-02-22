@@ -163,9 +163,7 @@ const char index_html[] PROGMEM = R"rawliteral(
 </html>
 )rawliteral";
 
-void notifyClients() {
-    ws.textAll(String(STATE));
-}
+
 
 void handleWebSocketMessage(void* arg, uint8_t* data, size_t len) {
     AwsFrameInfo* info = (AwsFrameInfo*) arg;
@@ -173,7 +171,7 @@ void handleWebSocketMessage(void* arg, uint8_t* data, size_t len) {
         data[len] = 0;
         if (strcmp((char*) data, "toggle") == 0) {
             STATE = !STATE;
-            notifyClients();
+            ws.textAll(String(STATE));
         }
     }
 }
@@ -219,7 +217,7 @@ void setup() {
     Serial.begin(115200);
 
 
-    barrier.Test();
+    // barrier.Test();
     barrier.Close();
 
     // Connect to Wi-Fi
