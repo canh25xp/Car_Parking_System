@@ -8,8 +8,6 @@
 #include <WiFiClient.h>
 #include <ESP8266WiFiMulti.h>
 
-#include <async.h>
-
 #include "Barrier.h" // Handle the servo
 
 // Set the LCD number of columns and rows
