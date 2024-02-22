@@ -41,7 +41,9 @@ void setup() {
 
     WiFi.printDiag(Serial);
 
-    initWebSocket();
+    // Init Web Socket
+    ws.onEvent(onEvent);
+    server.addHandler(&ws);
 
     // Route for root / web page
     server.on("/", HTTP_GET, [] (AsyncWebServerRequest* request) {
