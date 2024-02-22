@@ -33,4 +33,10 @@
         "statusBarItem.remoteForeground": "#e7e7e7"
     },
     "peacock.color": "#1857a4",
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/*.code-search": true,
+        "**/Test":true
+    }
 }
