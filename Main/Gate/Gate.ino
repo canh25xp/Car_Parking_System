@@ -8,6 +8,8 @@
 #include <WiFiClient.h>
 #include <ESP8266WiFiMulti.h>
 
+#include <async.h>
+
 #include "Barrier.h" // Handle the servo
 
 // Set the LCD number of columns and rows
@@ -42,13 +44,15 @@ Barrier barrier(SERVO_PIN);
 //Create WiFiMulti instance
 ESP8266WiFiMulti WiFiMulti;
 
-const char* sonar1 = "http://192.168.137.128/sonar1";
-const char* sonar2 = "http://192.168.137.128/sonar2";
-const char* sonar3 = "http://192.168.137.128/sonar3";
+const char* sonar1 = "http://192.168.137.47/sonar1";
+const char* sonar2 = "http://192.168.137.47/sonar2";
+const char* sonar3 = "http://192.168.137.47/sonar3";
+const char* status = "http://192.168.137.47/status";
 
 String distance1;
 String distance2;
 String distance3;
+String status_s;
 
 unsigned long previousMillis = 0;
 const long interval = 5000;
@@ -57,19 +61,19 @@ void setup() {
     // Initialize Serial Communication
     Serial.begin(115200);
 
-    // Wifi connections
-    Serial.println("");
+    Serial.print("Connecting to ");
+    Serial.println(SSID);
     WiFi.begin(SSID, PSWD);
     while (WiFi.status() != WL_CONNECTED) {
         delay(500);
         Serial.print(".");
     }
-
     Serial.println("");
-    Serial.print("Connected to ");
-    Serial.println(SSID);
+    Serial.println("Connected");
     Serial.print("IP address: ");
     Serial.println(WiFi.localIP());
+
+    WiFi.printDiag(Serial);
 
     // Test the servo (Sweep from 0 to 180 degree)
     barrier.Test();
@@ -104,22 +108,23 @@ void loop() {
     lcd.setCursor(0, 0);
     lcd.print(UID);
 
-    unsigned long currentMillis = millis();
 
     // Check WiFi connection status
     if ((WiFiMulti.run() == WL_CONNECTED)) {
-        distance1 = httpGETRequest(sonar1);
-        distance2 = httpGETRequest(sonar2);
-        distance3 = httpGETRequest(sonar3);
-        Serial.println("Distance1: " + distance1 + " cm - Distance2: " + distance2 + " cm - Distance3: " + distance3 + " cm");
+        // distance1 = httpGETRequest(sonar1);
+        // distance2 = httpGETRequest(sonar2);
+        // distance3 = httpGETRequest(sonar3);
+        status_s = httpGETRequest(status);
+        Serial.println("Empty: " + status_s);
 
         lcd.setCursor(0, 1);
-        lcd.print(distance1);
-        lcd.print(" ");
-        lcd.print(distance2);
-        lcd.print(" ");
-        lcd.print(distance3);
-        lcd.print(" ");
+        lcd.print("Empty: " + status_s);
+        // lcd.print(distance1);
+        // lcd.print(" ");
+        // lcd.print(distance2);
+        // lcd.print(" ");
+        // lcd.print(distance3);
+        // lcd.print(" ");
     }
     else {
         Serial.println("WiFi Disconnected");
