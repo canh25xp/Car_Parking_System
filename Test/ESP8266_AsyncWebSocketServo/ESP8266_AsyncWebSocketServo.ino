@@ -6,8 +6,8 @@
 #include "index.h"
 
 // Wifi credentials
-const char* ssid = "Laptop";
-const char* password = "Password";
+const char* SSID = "Laptop";
+const char* PSWD = "Password";
 
 bool STATE = 0;
 
@@ -21,19 +21,25 @@ AsyncWebSocket ws("/ws");
 
 void setup() {
     Serial.begin(115200);
+    Serial.println("");
 
     // barrier.Test();
     barrier.Close();
 
     // Connect to Wi-Fi
-    WiFi.begin(ssid, password);
+    Serial.print("Connecting to ");
+    Serial.println(SSID);
+    WiFi.begin(SSID, PSWD);
     while (WiFi.status() != WL_CONNECTED) {
-        delay(1000);
-        Serial.println("Connecting to WiFi..");
+        delay(500);
+        Serial.print(".");
     }
-
-    // Print ESP Local IP Address
+    Serial.println("");
+    Serial.println("Connected");
+    Serial.print("IP address: ");
     Serial.println(WiFi.localIP());
+
+    WiFi.printDiag(Serial);
 
     initWebSocket();
 
