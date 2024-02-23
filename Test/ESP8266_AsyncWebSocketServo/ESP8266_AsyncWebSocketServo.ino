@@ -9,7 +9,7 @@
 const char* SSID = "Laptop";
 const char* PSWD = "Password";
 
-bool STATE = 0;
+bool STATE = 1;
 
 // Create Servo instance
 #define SERVO_PIN D3
@@ -23,8 +23,7 @@ void setup() {
     Serial.begin(115200);
     Serial.println("");
 
-    // barrier.Test();
-    barrier.Close();
+    barrier.Test();
 
     // Connect to Wi-Fi
     Serial.print("Connecting to ");
@@ -77,8 +76,7 @@ void handleWebSocketMessage(void* arg, uint8_t* data, size_t len) {
 }
 
 
-void onEvent(AsyncWebSocket* server, AsyncWebSocketClient* client, AwsEventType type,
-             void* arg, uint8_t* data, size_t len) {
+void onEvent(AsyncWebSocket* server, AsyncWebSocketClient* client, AwsEventType type, void* arg, uint8_t* data, size_t len) {
     switch (type) {
         case WS_EVT_CONNECT:
             Serial.printf("WebSocket client #%u connected from %s\n", client->id(), client->remoteIP().toString().c_str());
@@ -89,8 +87,9 @@ void onEvent(AsyncWebSocket* server, AsyncWebSocketClient* client, AwsEventType 
         case WS_EVT_DATA:
             handleWebSocketMessage(arg, data, len);
             break;
-        case WS_EVT_PONG:
-        case WS_EVT_ERROR:
+        case WS_EVT_PONG: // Response to a ping request
+            break;
+        case WS_EVT_ERROR: // An error is received from the client
             break;
     }
 }
@@ -106,5 +105,6 @@ String processor(const String& var) {
             return "CLOSE";
         }
     }
+    
     return String();
 }
