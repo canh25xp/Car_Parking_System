@@ -15,13 +15,8 @@
 #define THRESHOLH 10
 
 // Wifi credential
-const char* SSID = "Laptop";
-const char* PSWD = "Password";
-
-// Set your Static IP address
-IPAddress local_IP(192, 168, 1, 184);
-IPAddress gateway(192, 168, 1, 1);
-IPAddress subnet(255, 255, 255, 0);
+const char* SSID = "ESP8266_NodeMCU";
+const char* PSWD = "12345678";
 
 // Create ultrasonic sensor instances
 NewPing sonar1(TRIG1, ECHO1, MAX_DISTANCE);
@@ -32,28 +27,20 @@ int val1 = 0;
 int val2 = 0;
 int val3 = 0;
 
+// Create AsyncWebServer object on port 80
 AsyncWebServer server(80);
 
 void setup() {
     Serial.begin(115200);
     Serial.println("");
 
-    // Configures static IP address
-    // if (!WiFi.config(local_IP, gateway, subnet)) {
-    //     Serial.println("STA Failed to configure");
-    // }
+    // Setting the ESP as an access point
+    Serial.println("Setting AP");
+    // Remove the password parameter, if you want the AP (Access Point) to be open
+    WiFi.softAP(SSID, PSWD);
 
-    Serial.print("Connecting to ");
-    Serial.println(SSID);
-    WiFi.begin(SSID, PSWD);
-    while (WiFi.status() != WL_CONNECTED) {
-        delay(500);
-        Serial.print(".");
-    }
-    Serial.println("");
-    Serial.println("Connected");
-    Serial.print("IP address: ");
-    Serial.println(WiFi.localIP());
+    Serial.print("AP IP address: ");
+    Serial.println(WiFi.softAPIP()); // Default address 192.168.4.1
 
     WiFi.printDiag(Serial);
 
