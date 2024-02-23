@@ -140,7 +140,6 @@ void loop() {
         notifyClients(sensorReadings);
 
         lastTime = millis();
-
     }
 
     ws.cleanupClients();

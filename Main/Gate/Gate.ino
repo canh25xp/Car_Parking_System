@@ -32,7 +32,7 @@
 
 // Wifi credential
 const char* SSID = "ESP8266_NodeMCU";
-const char* PSWD = "12345678";
+const char* PSWD = "123456788";
 
 // Create LCD instance
 LiquidCrystal_I2C lcd(0x27, LCD_COLS, LCD_ROWS);
@@ -51,24 +51,36 @@ AsyncWebServer server(80);
 AsyncWebSocket ws("/ws");
 
 
-IPAddress ParkingLotIP(192, 168, 1, 44);
+IPAddress ParkingLotIP(192, 168, 4, 1);
 const char* sonar1 = "http://192.168.4.1/sonar1";
 const char* sonar2 = "http://192.168.4.1/sonar2";
 const char* sonar3 = "http://192.168.4.1/sonar3";
 const char* status = "http://192.168.4.1/status";
-
-String distance1;
-String distance2;
-String distance3;
-String status_s;
+const char* count = "http://192.168.4.1/count";
 
 bool STATE = 1;
 
-void setup() {
-    // Initialize Serial Communication
-    Serial.begin(115200);
-    Serial.println(""); // Skip the first line of garbage characters
+unsigned long lastTime = 0;
+unsigned long timerDelay = 3000;
 
+#define MAX_ARRAY 10
+String UID_array[MAX_ARRAY] = {};
+
+String UID = "";
+bool flag = 0;
+
+void setup() {
+    // INITIALIZATION
+    Serial.begin(115200); // Initialize Serial Communication
+
+    SPI.begin(); // Initialize SPI bus
+
+    rfid.PCD_Init(); // Initialize MFRC522 RFID
+
+    lcd.init(); // Initialize LCD
+
+    // WIFI CONNECTION
+    Serial.println(""); // Skip the first line of garbage characters
     Serial.printf("Connecting to %s\n", SSID);
     WiFi.begin(SSID, PSWD);
     while (WiFi.status() != WL_CONNECTED) {
@@ -78,8 +90,18 @@ void setup() {
     Serial.println("");
     Serial.println("Connected");
     Serial.printf("IP address: %s\n", WiFi.localIP().toString().c_str());
-
     WiFi.printDiag(Serial);
+
+    // Init and Test the servo (Sweep from 0 to 180 degree)
+    // barrier.Test();
+    barrier.Open();
+
+    lcd.backlight();
+    lcd.clear();
+    lcd.setCursor(0, 0);
+    lcd.print("PARKING SYSTEM");
+    lcd.setCursor(0, 1);
+    lcd.print("HUST PRODUCTION");
 
     // Init Web Socket
     ws.onEvent(onEvent);
@@ -90,25 +112,6 @@ void setup() {
         request->send_P(200, "text/html", index_html, processor);
     });
 
-    // Init and Test the servo (Sweep from 0 to 180 degree)
-    // barrier.Test();
-    barrier.Open();
-
-    // Initialize LCD
-    lcd.init();
-    lcd.backlight();
-    lcd.clear();
-    lcd.setCursor(0, 0);
-    lcd.print("PARKING SYSTEM");
-    lcd.setCursor(0, 1);
-    lcd.print("HUST PRODUCTION");
-
-    // Initialize SPI bus
-    SPI.begin();
-
-    // Initialize MFRC522 RFID
-    rfid.PCD_Init();
-
     // Start server
     server.begin();
 
@@ -117,13 +120,27 @@ void setup() {
 }
 
 void loop() {
-    ws.cleanupClients();
     if (STATE) {
         barrier.Open();
     }
     else {
         barrier.Close();
     }
+
+    if ((millis() - lastTime) > timerDelay) {
+        // Serial.println(millis());
+        // Serial.print(httpGETRequest(count) + " lot(s) remain:");
+        // Serial.println(httpGETRequest(status));
+
+        lcd.clear();
+        lcd.setCursor(0, 0);
+        lcd.print(httpGETRequest(count) + " lot(s) remain:");
+        lcd.setCursor(0, 1);
+        lcd.print(httpGETRequest(status));
+
+        lastTime = millis();
+    }
+    ws.cleanupClients(); // Limiting the number of web socket clients
 
     // Look for new cards
     if (!rfid.PICC_IsNewCardPresent()) {
@@ -134,32 +151,37 @@ void loop() {
         return;
     }
 
-    String UID = RFID_GetUID();
-    lcd.clear();
-    lcd.setCursor(0, 0);
-    lcd.print(UID);
+    delay(1000);
+    String UID_latest = RFID_GetUID();
+    Serial.printf("Card Detected: %s\n", UID_latest.c_str());
+    if (flag == 0) {
+        UID = UID_latest;
+        Serial.printf("Registered New Card: %s\n", UID_latest.c_str());
+        flag = 1;
+    }
+    if (UID == UID_latest) {
+        STATE = 0;
+    }
+
+
+    // lcd.clear();
+    // lcd.setCursor(0, 0);
+    // lcd.print(UID);
+
+
 
 
     // Check WiFi connection status
-    if ((WiFiMulti.run() == WL_CONNECTED)) {
-        // distance1 = httpGETRequest(sonar1);
-        // distance2 = httpGETRequest(sonar2);
-        // distance3 = httpGETRequest(sonar3);
-        status_s = httpGETRequest(status);
-        Serial.println("Empty: " + status_s);
-
-        lcd.setCursor(0, 1);
-        lcd.print("Empty: " + status_s);
-        // lcd.print(distance1);
-        // lcd.print(" ");
-        // lcd.print(distance2);
-        // lcd.print(" ");
-        // lcd.print(distance3);
-        // lcd.print(" ");
-    }
-    else {
-        Serial.println("WiFi Disconnected");
-    }
+    // if ((WiFiMulti.run() == WL_CONNECTED)) {
+    //     lcd.clear();
+    //     lcd.setCursor(0, 0);
+    //     lcd.print(httpGETRequest(count) + " lot(s) remain:");
+    //     lcd.setCursor(0, 1);
+    //     lcd.print(httpGETRequest(status));
+    // }
+    // else {
+    //     Serial.println("WiFi Disconnected");
+    // }
 }
 
 String RFID_GetUID() {
@@ -172,10 +194,38 @@ String RFID_GetUID() {
     return content.substring(1);
 }
 
+bool CheckUID(String& UID) {
+    bool isDuplicate = false;
+    for (int i = 0; i < MAX_ARRAY; ++i) {
+        if (UID_array[i] == UID) {
+            isDuplicate = true;
+            break;
+        }
+    }
+
+    if (!isDuplicate) {
+        // Find an empty slot in the array to append the newID
+        for (int i = 0; i < MAX_ARRAY; ++i) {
+            if (UID_array[i] == "") {
+                UID_array[i] = UID;
+                break;
+            }
+        }
+    }
+
+    return isDuplicate;
+}
+
+void PrintUID() {
+    for (int i = 0; i < MAX_ARRAY; ++i) {
+        Serial.println(UID_array[i]);
+    }
+}
+
 String httpGETRequest(const char* serverName) {
     WiFiClient client;
     HTTPClient http;
-    
+
     // Your IP address with path or Domain name with URL path 
     http.begin(client, serverName);
 
@@ -185,13 +235,13 @@ String httpGETRequest(const char* serverName) {
     String payload = "--";
 
     if (httpResponseCode > 0) {
-        Serial.print("HTTP Response code: ");
-        Serial.println(httpResponseCode);
+        // Serial.print("HTTP Response code: ");
+        // Serial.println(httpResponseCode);
         payload = http.getString();
     }
     else {
-        Serial.print("Error code: ");
-        Serial.println(httpResponseCode);
+        // Serial.print("Error code: ");
+        // Serial.println(httpResponseCode);
     }
     // Free resources
     http.end();
@@ -240,6 +290,6 @@ String processor(const String& var) {
             return "CLOSE";
         }
     }
-    
+
     return String();
 }
