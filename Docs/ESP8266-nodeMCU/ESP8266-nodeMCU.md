@@ -35,6 +35,8 @@ A0 | ADC0 | Analog Input | X |
 - [NodeMCU firmware](https://github.com/nodemcu/nodemcu-firmware)
 - [NodeMCU datasheet](https://components101.com/development-boards/nodemcu-esp8266-pinout-features-and-datasheet)
 - [ESP8266 Pinout Reference: Which GPIO pins should you use?](https://randomnerdtutorials.com/esp8266-pinout-reference-gpios/)
+- [ESP8266WiFi library references](https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html)
+- [ESP8266 Arduino Core’s documentation](https://arduino-esp8266.readthedocs.io/en/latest/)
 
 ## Tutorials
 - [Installing ESP8266 NodeMCU Board in Arduino IDE 2.0 (Windows, Mac OS X, Linux)](https://randomnerdtutorials.com/installing-esp8266-nodemcu-arduino-ide-2-0/)
