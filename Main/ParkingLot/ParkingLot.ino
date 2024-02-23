@@ -57,6 +57,11 @@ void setup() {
         request->send_P(200, "text/plain", GetParkingLotStatus().c_str());
         });
 
+    server.on("/count", HTTP_GET, [] (AsyncWebServerRequest* request) {
+        request->send_P(200, "text/plain", String(WiFi.softAPgetStationNum()).c_str());
+        });
+
+    // Start server
     server.begin();
 }
 
