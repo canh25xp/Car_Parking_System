@@ -50,6 +50,8 @@ ESP8266WiFiMulti WiFiMulti;
 AsyncWebServer server(80);
 AsyncWebSocket ws("/ws");
 
+
+IPAddress ParkingLotIP(192, 168, 1, 44);
 const char* sonar1 = "http://192.168.4.1/sonar1";
 const char* sonar2 = "http://192.168.4.1/sonar2";
 const char* sonar3 = "http://192.168.4.1/sonar3";
@@ -65,10 +67,9 @@ bool STATE = 1;
 void setup() {
     // Initialize Serial Communication
     Serial.begin(115200);
-    Serial.println("");
+    Serial.println(""); // Skip the first line of garbage characters
 
-    Serial.print("Connecting to ");
-    Serial.println(SSID);
+    Serial.printf("Connecting to %s\n", SSID);
     WiFi.begin(SSID, PSWD);
     while (WiFi.status() != WL_CONNECTED) {
         delay(500);
@@ -76,8 +77,7 @@ void setup() {
     }
     Serial.println("");
     Serial.println("Connected");
-    Serial.print("IP address: ");
-    Serial.println(WiFi.localIP());
+    Serial.printf("IP address: %s\n", WiFi.localIP().toString().c_str());
 
     WiFi.printDiag(Serial);
 
@@ -90,13 +90,18 @@ void setup() {
         request->send_P(200, "text/html", index_html, processor);
     });
 
-    // Test the servo (Sweep from 0 to 180 degree)
-    barrier.Test();
+    // Init and Test the servo (Sweep from 0 to 180 degree)
+    // barrier.Test();
+    barrier.Open();
 
     // Initialize LCD
     lcd.init();
     lcd.backlight();
-    LCD_Greeting();
+    lcd.clear();
+    lcd.setCursor(0, 0);
+    lcd.print("PARKING SYSTEM");
+    lcd.setCursor(0, 1);
+    lcd.print("HUST PRODUCTION");
 
     // Initialize SPI bus
     SPI.begin();
@@ -170,7 +175,7 @@ String RFID_GetUID() {
 String httpGETRequest(const char* serverName) {
     WiFiClient client;
     HTTPClient http;
-
+    
     // Your IP address with path or Domain name with URL path 
     http.begin(client, serverName);
 
@@ -192,16 +197,6 @@ String httpGETRequest(const char* serverName) {
     http.end();
 
     return payload;
-}
-
-
-void LCD_Greeting() {
-    lcd.clear();
-    lcd.setCursor(0, 0);
-    lcd.print("PARKING SYSTEM");
-    lcd.setCursor(0, 1);
-    lcd.print("HUST PRODUCTION");
-    delay(1000);
 }
 
 void handleWebSocketMessage(void* arg, uint8_t* data, size_t len) {
