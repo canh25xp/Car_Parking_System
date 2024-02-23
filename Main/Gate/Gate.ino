@@ -8,6 +8,9 @@
 #include <WiFiClient.h>
 #include <ESP8266WiFiMulti.h>
 
+#include <ESPAsyncTCP.h>
+#include <ESPAsyncWebServer.h>
+
 #include "Barrier.h" // Handle the servo
 
 // Set the LCD number of columns and rows
@@ -27,8 +30,8 @@
 #define SERVO_PIN       D3
 
 // Wifi credential
-const char* SSID = "Laptop";
-const char* PSWD = "Password";
+const char* SSID = "ESP8266_NodeMCU";
+const char* PSWD = "12345678";
 
 // Create LCD instance
 LiquidCrystal_I2C lcd(0x27, LCD_COLS, LCD_ROWS);
@@ -42,22 +45,21 @@ Barrier barrier(SERVO_PIN);
 //Create WiFiMulti instance
 ESP8266WiFiMulti WiFiMulti;
 
-const char* sonar1 = "http://192.168.137.47/sonar1";
-const char* sonar2 = "http://192.168.137.47/sonar2";
-const char* sonar3 = "http://192.168.137.47/sonar3";
-const char* status = "http://192.168.137.47/status";
+const char* sonar1 = "http://192.168.4.1/sonar1";
+const char* sonar2 = "http://192.168.4.1/sonar2";
+const char* sonar3 = "http://192.168.4.1/sonar3";
+const char* status = "http://192.168.4.1/status";
 
 String distance1;
 String distance2;
 String distance3;
 String status_s;
 
-unsigned long previousMillis = 0;
-const long interval = 5000;
 
 void setup() {
     // Initialize Serial Communication
     Serial.begin(115200);
+    Serial.println("");
 
     Serial.print("Connecting to ");
     Serial.println(SSID);
