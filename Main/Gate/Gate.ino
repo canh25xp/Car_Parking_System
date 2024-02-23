@@ -12,6 +12,7 @@
 #include <ESPAsyncWebServer.h>
 
 #include "Barrier.h" // Handle the servo
+#include "index.h"
 
 // Set the LCD number of columns and rows
 #define LCD_COLS        16
@@ -45,6 +46,10 @@ Barrier barrier(SERVO_PIN);
 //Create WiFiMulti instance
 ESP8266WiFiMulti WiFiMulti;
 
+// Create AsyncWebServer object on port 80
+AsyncWebServer server(80);
+AsyncWebSocket ws("/ws");
+
 const char* sonar1 = "http://192.168.4.1/sonar1";
 const char* sonar2 = "http://192.168.4.1/sonar2";
 const char* sonar3 = "http://192.168.4.1/sonar3";
@@ -55,6 +60,7 @@ String distance2;
 String distance3;
 String status_s;
 
+bool STATE = 1;
 
 void setup() {
     // Initialize Serial Communication
@@ -75,6 +81,15 @@ void setup() {
 
     WiFi.printDiag(Serial);
 
+    // Init Web Socket
+    ws.onEvent(onEvent);
+    server.addHandler(&ws);
+
+    // Route for root / web page
+    server.on("/", HTTP_GET, [] (AsyncWebServerRequest* request) {
+        request->send_P(200, "text/html", index_html, processor);
+    });
+
     // Test the servo (Sweep from 0 to 180 degree)
     barrier.Test();
 
@@ -89,11 +104,22 @@ void setup() {
     // Initialize MFRC522 RFID
     rfid.PCD_Init();
 
+    // Start server
+    server.begin();
+
     Serial.println();
-    Serial.println("Approximate your card to the reader...");
+    Serial.println("Server Started");
 }
 
 void loop() {
+    ws.cleanupClients();
+    if (STATE) {
+        barrier.Open();
+    }
+    else {
+        barrier.Close();
+    }
+
     // Look for new cards
     if (!rfid.PICC_IsNewCardPresent()) {
         return;
@@ -176,4 +202,49 @@ void LCD_Greeting() {
     lcd.setCursor(0, 1);
     lcd.print("HUST PRODUCTION");
     delay(1000);
+}
+
+void handleWebSocketMessage(void* arg, uint8_t* data, size_t len) {
+    AwsFrameInfo* info = (AwsFrameInfo*) arg;
+    if (info->final && info->index == 0 && info->len == len && info->opcode == WS_TEXT) {
+        data[len] = 0;
+        if (strcmp((char*) data, "toggle") == 0) {
+            STATE = !STATE;
+            ws.textAll(String(STATE));
+        }
+    }
+}
+
+
+void onEvent(AsyncWebSocket* server, AsyncWebSocketClient* client, AwsEventType type, void* arg, uint8_t* data, size_t len) {
+    switch (type) {
+        case WS_EVT_CONNECT:
+            Serial.printf("WebSocket client #%u connected from %s\n", client->id(), client->remoteIP().toString().c_str());
+            break;
+        case WS_EVT_DISCONNECT:
+            Serial.printf("WebSocket client #%u disconnected\n", client->id());
+            break;
+        case WS_EVT_DATA:
+            handleWebSocketMessage(arg, data, len);
+            break;
+        case WS_EVT_PONG: // Response to a ping request
+            break;
+        case WS_EVT_ERROR: // An error is received from the client
+            break;
+    }
+}
+
+
+String processor(const String& var) {
+    Serial.println(var);
+    if (var == "STATE") {
+        if (STATE) {
+            return "OPEN";
+        }
+        else {
+            return "CLOSE";
+        }
+    }
+    
+    return String();
 }
