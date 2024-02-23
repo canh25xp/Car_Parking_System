@@ -1,7 +1,6 @@
 #include <Arduino.h>
 #include <LiquidCrystal_I2C.h>
 #include <SPI.h>
-#include <MFRC522.h>
 
 #include <ESP8266WiFi.h>
 #include <ESP8266HTTPClient.h>
@@ -12,7 +11,9 @@
 #include <ESPAsyncWebServer.h>
 
 #include "Barrier.h" // Handle the servo
-#include "index.h"
+#include "RFID.h"
+#include "data/index.h"
+
 
 // Set the LCD number of columns and rows
 #define LCD_COLS        16
@@ -79,6 +80,8 @@ void setup() {
 
     lcd.init(); // Initialize LCD
 
+    barrier.Init(); // Init at 0 degree
+
     // WIFI CONNECTION
     Serial.println(""); // Skip the first line of garbage characters
     Serial.printf("Connecting to %s\n", SSID);
@@ -91,10 +94,6 @@ void setup() {
     Serial.println("Connected");
     Serial.printf("IP address: %s\n", WiFi.localIP().toString().c_str());
     WiFi.printDiag(Serial);
-
-    // Init and Test the servo (Sweep from 0 to 180 degree)
-    // barrier.Test();
-    barrier.Open();
 
     lcd.backlight();
     lcd.clear();
@@ -152,7 +151,7 @@ void loop() {
     }
 
     delay(1000);
-    String UID_latest = RFID_GetUID();
+    String UID_latest = RFID_GetUID(rfid);
     Serial.printf("Card Detected: %s\n", UID_latest.c_str());
     if (flag == 0) {
         UID = UID_latest;
@@ -182,16 +181,6 @@ void loop() {
     // else {
     //     Serial.println("WiFi Disconnected");
     // }
-}
-
-String RFID_GetUID() {
-    String content = "";
-    for (byte i = 0; i < rfid.uid.size; i++) {
-        content.concat(String(rfid.uid.uidByte[i] < 0x10 ? " 0" : " "));
-        content.concat(String(rfid.uid.uidByte[i], HEX));
-    }
-    content.toUpperCase();
-    return content.substring(1);
 }
 
 bool CheckUID(String& UID) {
